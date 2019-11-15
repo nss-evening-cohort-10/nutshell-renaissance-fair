@@ -1,0 +1,74 @@
+{
+	"souvenir1": {
+		"name": "Nobleman's Costume",
+		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/03/MCI-257.png",
+		"description": "A doublet worn by the noble class in the medieval times.",
+		"price": 2799,
+		"type": "costume",
+		"quantitiy": 9,
+		"location": "main shop"
+	},
+	"souvenir2": {
+		"name": "Renaissance Boots",
+		"imageUrl": "http://www.bytheswordinc.com/images/product/large/GB1169.jpg",
+		"description": "A nobles boots",
+		"price": 5999,
+		"type": "shoes",
+		"quantitiy": 4,
+		"location": "main shop"
+	},
+	"souvenir3": {
+		"name": "Rustic Mug",
+		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/04/CC11711.png",
+		"description": "Beer mug",
+		"price": 1499,
+		"type": "mug",
+		"quantitiy": 13,
+		"location": "main shop"
+	},
+	"souvenir4": {
+		"name": "Family Banners",
+		"imageUrl": "https://www.bytheswordinc.com/images/product/large/GH0063.jpg",
+		"description": "Rep your family like the medieval knights used to",
+		"price": 2000,
+		"type": "banner",
+		"quantitiy": 56,
+		"location": "main shop"
+	},
+	"souvenir5": {
+		"name": "Knights Costume",
+		"imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51jrtE8sCUL._AC_.jpg",
+		"description": "Want to be a Knight?",
+		"price": 14599,
+		"type": "costume",
+		"quantitiy": 3,
+		"location": "main shop"
+	},
+	"souvenir6": {
+		"name": "Excalibur",
+		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/04/NP-G-BL002.png",
+		"description": "Are you worthy?",
+		"price": 1599,
+		"type": "sword",
+		"quantitiy": 102,
+		"location": "main shop"
+	},
+	"souvenir7": {
+		"name": "Childrens Queen Crown",
+		"imageUrl": "https://images.neimanmarcus.com/ca/2/product_assets/H/C/P/K/9/NMHCPK9_mz.jpg",
+		"description": "My Queen",
+		"price": 1359,
+		"type": "crown",
+		"quantitiy": 113,
+		"location": "main shop"
+	},
+	"souvenir8": {
+		"name": "Childrens King Crown",
+		"imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71IldM373jL._AC_UX679_.jpg",
+		"description": "My King",
+		"price": 1359,
+		"type": "crown",
+		"quantitiy": 145,
+		"location": "main shop"
+	}
+}

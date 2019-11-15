@@ -1,6 +1,5 @@
-import firebase from 'firebase';
-import 'bootstrap';
-
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import apiKeys from './helpers/apiKeys.json';
 import '../styles/main.scss';
 
