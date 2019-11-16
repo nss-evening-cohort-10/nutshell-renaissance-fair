@@ -12,7 +12,7 @@ const eventListeners = () => {
   });
   $('#Food-button').click(() => {
     $('#boards').addClass('hide');
-    $('#food').removeClass('hide');
+    $('#foods').removeClass('hide');
   });
   $('#Staff-button').click(() => {
     $('#boards').addClass('hide');
