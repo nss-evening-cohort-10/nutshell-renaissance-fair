@@ -8,6 +8,7 @@ import souvenir from './components/souvenirs/souvenirs';
 import login from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import logout from './components/Auth/logout';
+import food from './components/Foods/foods';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
@@ -16,6 +17,7 @@ const init = () => {
   login.logInButton();
   authData.checkLoginStatus();
   logout.logoutEvent();
+  food.buildFoods();
 };
 
 init();
