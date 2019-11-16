@@ -18,4 +18,6 @@ const getSouvenirData = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getSouvenirData };
+const addNewSouvenir = (newSouvenir) => axios.post(`${baseUrl}/souvenirs.json`, newSouvenir);
+
+export default { getSouvenirData, addNewSouvenir };

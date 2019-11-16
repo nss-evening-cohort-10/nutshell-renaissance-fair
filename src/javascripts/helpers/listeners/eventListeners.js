@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import addS from '../../components/newSouvenir/newSouvenir';
 
 const eventListeners = () => {
   $('#Shows-button').click(() => {
@@ -18,6 +19,7 @@ const eventListeners = () => {
     $('#boards').addClass('hide');
     $('#staff').removeClass('hide');
   });
+  $('#add-new-souvenir').click(addS.addNewSouvenirCard);
 };
 
 export default { eventListeners };
