@@ -21,6 +21,7 @@ const checkLoginStatus = () => {
     } else {
       logout.addClass('hide');
       authenticate.removeClass('hide');
+      souvenirs.addClass('hide');
       foods.addClass('hide');
       shows.addClass('hide');
       staff.addClass('hide');
