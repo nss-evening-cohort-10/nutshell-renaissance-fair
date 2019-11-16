@@ -1,19 +1,17 @@
 import $ from 'jquery';
-import firebase from 'firebase/app';
-import 'firebase/auth';
 import souvenirData from '../../helpers/data/souvenirData';
+import build from '../souvenirs/souvenirs';
 
 
-const addNewBoardByUser = (e) => {
+const addNewSouvenirCard = (e) => {
   e.stopImmediatePropagation();
-  const { uid } = firebase.auth().currentUser;
   const newSouvenir = {
     name: $('#souvenir-name').val(),
     imageUrl: $('#image-url').val(),
     description: $('#souvenir-description').val(),
     price: $('#souvenir-price').val(),
     type: $('#souvenir-type').val(),
-    quantitiy: $('#souvenir-quantity').val(),
+    quantity: $('#souvenir-quantity').val(),
     location: $('#souvenir-location').val(),
   };
   console.log(newSouvenir);
@@ -21,8 +19,9 @@ const addNewBoardByUser = (e) => {
     .then(() => {
       $('#addSouvenirModal').modal('hide');
       $('#souvenirs').removeClass('hide');
+      build.buildSouvenirs();
     })
     .catch((error) => console.error(error));
 };
 
-export default { addNewBoardByUser };
+export default { addNewSouvenirCard };

@@ -7,7 +7,7 @@ const buildSouvenirs = () => {
   souvenirData.getSouvenirData()
     .then((souvenirs) => {
       let domString = '<h2 class="text-center">Souvenirs</h2>';
-      domString += `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSouvenirModal">
+      domString += `<button type="button" class="btn btn-primary addNewSouvenirButton" data-toggle="modal" data-target="#addSouvenirModal">
       Add New Souvenir
     </button>`;
       domString += ' <div class="cardZone d-flex flex-wrap justify-content-center" id="souvenirCards">';
