@@ -3,7 +3,6 @@ import 'firebase/auth';
 import $ from 'jquery';
 
 const authenticate = $('.logInButton');
-const boards = $('#boards');
 const souvenirs = $('#souvenirs');
 const foods = $('#staffs');
 const shows = $('#shows');
