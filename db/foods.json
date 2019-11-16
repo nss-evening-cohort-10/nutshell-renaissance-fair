@@ -1,0 +1,38 @@
+{
+	"food1": {
+		"name": "Turkey Leg",
+		"description": "A massive leg of juicy turkey that will satisfy even the hungriest of fest-goers!",
+		"price": 8,
+		"location": "Concessions stand 1",
+		"type": "food",
+		"quantity": 79,
+		"imageUrl": "https://hips.hearstapps.com/del.h-cdn.co/assets/17/06/1486665207-delish-disney7497.jpg"
+  },
+  "food2": {
+		"name": "Ale",
+		"description": "This medieval style brew has deep earthy flavors and a rich amber color. Be careful though, It's very strong.",
+		"price": 10,
+		"location": "Concessions stand 2",
+		"type": "drink",
+		"quantity": 79,
+		"imageUrl": "https://www.glassjacks.co.uk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/u/dunkel_v0882_ii.jpg"
+  },
+  "food3": {
+		"name": "Corn Dog",
+		"description": "These festival classics are a staple of any fair. Come grab a dog or six!",
+		"price": 3,
+		"location": "Concessions stand 1",
+		"type": "food",
+		"quantity": 79,
+		"imageUrl": "https://www.justataste.com/wp-content/uploads/2015/06/easy-homemade-mini-corn-dogs-recipe.jpg"
+  },
+  "food4": {
+		"name": "Funnel Cake",
+		"description": "These delicious blueberry funnel cakes are made with love and blueberries. Also Available without blueberries.",
+		"price": 5,
+		"location": "Concessions stand 3",
+		"type": "food",
+		"quantity": 79,
+		"imageUrl": "https://www.foodlion.com/recipes/blueberry-funnel-cakes.img.png"
+	}
+}
