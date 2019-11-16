@@ -3,7 +3,7 @@ import 'firebase/auth';
 import $ from 'jquery';
 
 const authenticate = $('.logInButton');
-// const souvenirs = $('#souvenirs');
+const souvenirs = $('#souvenirs');
 const foods = $('#foods');
 const shows = $('#shows');
 const staff = $('#staffs');
@@ -14,14 +14,14 @@ const checkLoginStatus = () => {
     if (user) {
       logout.removeClass('hide');
       authenticate.addClass('hide');
-      // souvenirs.addClass('hide');
+      souvenirs.addClass('hide');
       foods.addClass('hide');
       shows.addClass('hide');
       staff.addClass('hide');
     } else {
       logout.addClass('hide');
       authenticate.removeClass('hide');
-      // souvenirs.addClass('hide');
+      souvenirs.addClass('hide');
       foods.addClass('hide');
       shows.addClass('hide');
       staff.addClass('hide');
