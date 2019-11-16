@@ -15,6 +15,11 @@ const buildTheDashboard = (boardArray) => {
     </div>
   </div>`;
   }
+  // domString += `<div>
+  // <h6>Freelancer</h6>
+  // <p>301 Plus Park Blvd</p>
+  // <p>Nashville, TN 37201<p/>
+  //  </div>`;
   utilities.printToDom('boards', domString);
 };
 
