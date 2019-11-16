@@ -1,7 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 
+// background images provided by toptal.com
+
 body {
-  background-color: blue;
+  background-image: url('./stirling-castle-202103.jpg');
+  background-size: 100%;
+}
+
+nav {
+  box-shadow: 0 8px 6px -6px rgb(73, 73, 73);
+  background-image: url(./brickwall.png);
 }
 
 .brandLogo {

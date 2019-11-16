@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 const authenticate = $('.logInButton');
 const souvenirs = $('#souvenirs');
-const foods = $('#staffs');
+const foods = $('#foods');
 const shows = $('#shows');
 const staff = $('#staffs');
 const logout = $('.logout');
