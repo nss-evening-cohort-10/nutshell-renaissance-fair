@@ -5,7 +5,7 @@
 		"description": "A doublet worn by the noble class in the medieval times.",
 		"price": 2799,
 		"type": "costume",
-		"quantitiy": 9,
+		"quantity": 9,
 		"location": "main shop"
 	},
 	"souvenir2": {
@@ -14,7 +14,7 @@
 		"description": "A nobles boots",
 		"price": 5999,
 		"type": "shoes",
-		"quantitiy": 4,
+		"quantity": 4,
 		"location": "main shop"
 	},
 	"souvenir3": {
@@ -23,7 +23,7 @@
 		"description": "Beer mug",
 		"price": 1499,
 		"type": "mug",
-		"quantitiy": 13,
+		"quantity": 13,
 		"location": "main shop"
 	},
 	"souvenir4": {
@@ -32,7 +32,7 @@
 		"description": "Rep your family like the medieval knights used to",
 		"price": 2000,
 		"type": "banner",
-		"quantitiy": 56,
+		"quantity": 56,
 		"location": "main shop"
 	},
 	"souvenir5": {
@@ -41,7 +41,7 @@
 		"description": "Want to be a Knight?",
 		"price": 14599,
 		"type": "costume",
-		"quantitiy": 3,
+		"quantity": 3,
 		"location": "main shop"
 	},
 	"souvenir6": {
@@ -50,7 +50,7 @@
 		"description": "Are you worthy?",
 		"price": 1599,
 		"type": "sword",
-		"quantitiy": 102,
+		"quantity": 102,
 		"location": "main shop"
 	},
 	"souvenir7": {
@@ -59,7 +59,7 @@
 		"description": "My Queen",
 		"price": 1359,
 		"type": "crown",
-		"quantitiy": 113,
+		"quantity": 113,
 		"location": "main shop"
 	},
 	"souvenir8": {
@@ -68,7 +68,7 @@
 		"description": "My King",
 		"price": 1359,
 		"type": "crown",
-		"quantitiy": 145,
+		"quantity": 145,
 		"location": "main shop"
 	}
 }
