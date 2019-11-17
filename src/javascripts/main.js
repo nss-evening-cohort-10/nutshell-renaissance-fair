@@ -13,6 +13,7 @@ import login from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import logout from './components/Auth/logout';
 import food from './components/Foods/foods';
+import shows from './components/shows/shows';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
@@ -24,6 +25,7 @@ const init = () => {
   authData.checkLoginStatus();
   logout.logoutEvent();
   food.buildFoods();
+  shows.buildShows();
 };
 
 init();
