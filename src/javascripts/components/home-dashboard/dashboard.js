@@ -4,22 +4,23 @@ import './dashboard.scss';
 
 
 const buildTheDashboard = (boardArray) => {
-  let domString = '';
+  let domString = '<div class="d-flex flex-wrap justify-content-center">';
   for (let i = 0; i < boardArray.length; i += 1) {
     const board = boardArray[i];
-    domString += `<div class="col-5 card">
-    
+    domString += `
+    <div class="card col-4 dashboard-card">
     <img src="${board.imageUrl}" class="dashboard-image" alt="...">
     <div class="card-body d-flex justify-content-center">
-    <button id="${board.id}-button" class="btn btn-primary">${board.id}</button>
+    <button id="${board.id}-button" class="btn btn-outline-light dashboard-button">${board.id}</button>
     </div>
   </div>`;
   }
-  // domString += `<div>
-  // <h6>Freelancer</h6>
-  // <p>301 Plus Park Blvd</p>
-  // <p>Nashville, TN 37201<p/>
-  //  </div>`;
+  domString += '</div>';
+  domString += `<div id="footer" class="text-center">
+  <h6>Freelancer <i class="far fa-copyright"></i></h6>
+  <p id="street">301 Plus Park Blvd</p>
+  <p id="city">Nashville, TN 37201</p>
+   </div>`;
   utilities.printToDom('boards', domString);
 };
 
