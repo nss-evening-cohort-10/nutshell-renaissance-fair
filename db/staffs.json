@@ -1,0 +1,75 @@
+{
+  "staff1": {
+    "name": "Igor Williams III",
+    "phone": "319-772-4500",
+    "imageUrl": "https://farm1.staticflickr.com/908/27888749288_dfb921951d_b.jpg",
+    "email": "igoramus@freelancer.com",
+    "employeeId": "001",
+    "role": "Entertainer",
+    "location": "Stage3"
+  },
+  "staff2": {
+    "name": "Mandy Smith",
+    "phone": "336-777-1276",
+    "imageUrl": "https://media.defense.gov/2014/Mar/11/2000869657/-1/-1/0/130310-F-VX940-013.JPG",
+    "email": "mandyS@freelancer.com",
+    "employeeId": "002",
+    "role": "Entertainer",
+    "location": "Stage1"
+  },
+  "staff3": {
+    "name": "Suzy Adams",
+    "phone": "615-333-1212",
+    "imageUrl": "https://media.defense.gov/2009/Mar/06/2000614370/780/780/0/090228-F-7279H-003.JPG",
+    "email": "sadams@freelancer.com",
+    "employeeId": "003",
+    "role": "Entertainer",
+    "location": "Stage2"
+  },
+  "staff4": {
+    "name": "Laura Cummins",
+    "phone": "704-771-1987",
+    "imageUrl": "https://live.staticflickr.com/4630/27840893439_7f936a85e9_b.jpg",
+    "email": "lcummins@freelancer.com",
+    "employeeId": "004",
+    "role": "Cashier",
+    "location": "SouvenirKiosk1"
+  },
+  "staff5": {
+    "name": "Amy Stevens",
+    "phone": "404-227-8796",
+    "imageUrl": "https://storage.needpix.com/rsynced_images/renaissance-644433_1280.jpg",
+    "email": "astevens@freelancer.com",
+    "employeeId": "005",
+    "role": "Cashier",
+    "location": "FoodKiosk1"
+  },
+  "staff6": {
+    "name": "Michael Graham",
+    "phone": "615-322-6547",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwbVHJAdB1_l33FxK4_mfxMmAP2ZzOYAzWkj93Xp0nkX64rkAd",
+    "email": "mgraham@freelancer.com",
+    "employeeId": "006",
+    "role": "Cashier",
+    "location": "SouvenirKiosk2"
+  },
+  "staff7": {
+    "name": "Sabrina Fowler",
+    "phone": "212-579-4345",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTUE9I-xbWyX52IZc53cx8OrGNjoLfjxS5v2cbOBNk56NPsA-YQ",
+    "email": "sfowler@freelancer.com",
+    "employeeId": "007",
+    "role": "Staff Manager",
+    "location": "Main office"
+  },
+  "staff8": {
+    "name": "Dominick Patterson",
+    "phone": "813-689-3265",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdZJSdxJcNCuEbn4B16g2neP4pr_JgZGszlbjsY9YGBZPsBykf",
+    "email": "dpatterson@freelancer.com",
+    "employeeId": "008",
+    "role": "Entertainer",
+    "location": "Sector1"
+  }
+
+}
