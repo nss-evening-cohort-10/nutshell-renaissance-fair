@@ -3,7 +3,7 @@ import './showsCard.scss';
 const printCardsToDom = (show) => {
   let domString = '';
   domString += '<dl class="accordion">';
-  domString += `<dt><a href="#">${show.name}<a/></dt>`;
+  domString += `<dt><a href="#"><h4>${show.name}</h4><a/></dt>`;
   domString += `<dd>
     <p>${show.id}</p>
     <p>${show.date}</p>
