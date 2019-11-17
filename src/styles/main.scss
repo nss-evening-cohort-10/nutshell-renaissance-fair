@@ -1,11 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
 body {
   background-image: url('./stirling-castle-202103.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Almendra Display', cursive;
+  font-family: 'Roboto Slab', serif;
 }
 
 nav {
