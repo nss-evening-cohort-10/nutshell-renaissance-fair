@@ -1,5 +1,5 @@
 const boards = [{
-  imageUrl: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKylQhbd-m7b01LQsqmUvLnaKsQ4F-PPyItwIyYzBmFgJfSi-BUrPgQBOGvNg_4PvBj0OeyFqqwWg2Frgkcf5IUxN-r1CePpQbUZL0DGfVycI_Hlv6EWw89g&usqp=CAE',
+  imageUrl: 'https://i.ibb.co/NNShS9z/souvenir.jpg',
   id: 'Souvenirs',
 },
 {
@@ -11,7 +11,7 @@ const boards = [{
   id: 'Shows',
 },
 {
-  imageUrl: 'https://farm1.staticflickr.com/972/41716569642_4b6a88344a_b.jpg',
+  imageUrl: 'https://i.ibb.co/KydZvDJ/staff.png',
   id: 'Staff',
 }];
 
