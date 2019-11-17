@@ -1,3 +1,36 @@
-.dashboard-image {
-  height: 400px;
+.dashboard-card {
+  margin: 4em;
+  background-color: rgb(147, 5, 5);
+  border: 8px solid  rgb(203, 155, 84);
+  border-radius: 10px;
+
+  .dashboard-image {
+    height: 400px;
+  }
+  .dashboard-button {
+    
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+}
+
+
+#footer {
+  background-color: rgb(147, 5, 5);
+  color: white;
+  margin-bottom: -5px;
+  padding: 5px;
+  border-top: 8px solid  rgb(203, 155, 84);
+
+  h6 {
+    padding-top: .5em;
+  }
+  #street {
+    margin-bottom: 2px;
+  }
+
+  // #city {
+  //   margin-bottom: -5px;
+  // }
 }

@@ -8,7 +8,6 @@ import souvenir from './components/souvenirs/souvenirs';
 import dashboard from './components/home-dashboard/dashboard';
 import boardData from './helpers/data/boardData';
 import events from './helpers/listeners/eventListeners';
-
 import login from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import logout from './components/Auth/logout';
