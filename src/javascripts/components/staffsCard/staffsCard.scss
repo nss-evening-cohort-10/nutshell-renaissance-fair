@@ -1,0 +1,21 @@
+.staffCard {
+  font-size: .75em;
+  margin-top: 1em;
+  margin: .5em;
+  border: 4px solid rgb(14, 39, 77);
+  background-color: rgba(152, 149, 136, 0.995);
+  
+
+  // .staffCardBody {
+  //   border-top: 1px solid rgb(203, 155, 84)
+  // }
+  .email {
+    font-size: .35em;
+    background-color: rgb(14, 39, 77);
+    color: white;
+  }
+  .staff-buttons {
+    font-size: 1em;
+    margin: 1em;
+  }
+}
