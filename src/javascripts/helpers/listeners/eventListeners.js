@@ -17,7 +17,7 @@ const eventListeners = () => {
   });
   $('#Staff-button').click(() => {
     $('#boards').addClass('hide');
-    $('#staff').removeClass('hide');
+    $('#staffs').removeClass('hide');
   });
   $('#add-new-souvenir').click(addS.addNewSouvenirCard);
 };
