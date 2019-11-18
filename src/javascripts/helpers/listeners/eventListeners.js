@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import addS from '../../components/newSouvenir/newSouvenir';
+import deleteS from '../../components/deleteSouvenir/deleteSouvenir';
 
 const eventListeners = () => {
   $('#Shows-button').click(() => {
@@ -20,6 +21,7 @@ const eventListeners = () => {
     $('#staffs').removeClass('hide');
   });
   $('#add-new-souvenir').click(addS.addNewSouvenirCard);
+  $('body').on('click', '.deleteSouvenir', deleteS.deleteSingleSouvenir);
 };
 
 export default { eventListeners };
