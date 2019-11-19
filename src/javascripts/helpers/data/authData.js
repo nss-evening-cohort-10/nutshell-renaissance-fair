@@ -1,35 +1,41 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import $ from 'jquery';
-import staffBuilder from '../../components/staffBuilder/staffBuilder';
+import staffs from '../../components/staffBuilder/staffBuilder';
+import souvenirs from '../../components/souvenirs/souvenirs';
+import foods from '../../components/Foods/foods';
+import dashboard from '../../components/home-dashboard/dashboard';
+import boardData from './boardData';
+import events from '../listeners/eventListeners';
 
 const authenticate = $('.logInButton');
-const souvenirs = $('#souvenirs');
-const foods = $('#foods');
-const shows = $('#shows');
-const staff = $('#staffs');
 const logout = $('.logout');
+
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       logout.removeClass('hide');
       authenticate.addClass('hide');
-      souvenirs.addClass('hide');
-      foods.addClass('hide');
-      shows.addClass('hide');
-      staff.addClass('hide');
-      staffBuilder.printStaffCards();
     } else {
       logout.addClass('hide');
       authenticate.removeClass('hide');
-      souvenirs.addClass('hide');
-      foods.addClass('hide');
-      shows.addClass('hide');
-      staff.addClass('hide');
-      staffBuilder.printStaffCards();
     }
+    dashboard.buildTheDashboard(boardData.getBoards());
+    staffs.printStaffCards();
+    souvenirs.buildSouvenirs();
+    foods.buildFoods();
+    events.eventListeners();
   });
 };
+
+const onload = () => {
+  $('#souvenirs').addClass('hide');
+  $('#foods').addClass('hide');
+  $('#shows').addClass('hide');
+  $('#staffs').addClass('hide');
+};
+
+window.onload = onload;
 
 export default { checkLoginStatus };

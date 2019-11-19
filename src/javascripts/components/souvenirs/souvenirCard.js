@@ -17,6 +17,10 @@ const souvenirDomString = (souvenirs) => {
     <p class="card-text">${souvenirs.description}</p>
     <p class="card-footer">${souvenirs.quantity}</p>
     <p class="card-footer">${souvenirs.location}</p>
+    <p class="card-footer">
+    <button class="btn btn-outline-danger deleteSouvenir" id="${souvenirs.id}">Delete</button>
+    <button class="btn btn-outline-danger editSouvenir" id="${souvenirs.id}">Edit Souvenir</button>
+    </p>
     </div>
     </div>`;
   } else {
@@ -31,10 +35,6 @@ const souvenirDomString = (souvenirs) => {
     <p class="card-text">${souvenirs.description}</p>
     <p class="card-footer">${souvenirs.quantity}</p>
     <p class="card-footer">${souvenirs.location}</p>
-    <p class="card-footer">
-    <button class="btn btn-outline-danger deleteSouvenir" id="${souvenirs.id}">Delete</button>
-    <button class="btn btn-outline-danger editSouvenir" id="${souvenirs.id}">Edit Souvenir</button>
-    </p>
     </div>
     </div>`;
   }
