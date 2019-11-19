@@ -19,8 +19,8 @@ const staffsCard = (staffs) => {
     <p class="card-text staffId">Id: ${staffs.id}</p>
     <p class="card-text phone">Phone: ${staffs.phone}</p>
     <p class="card-footer email">Email: ${staffs.email}</p>
-    <button type="button" class="btn btn-link staff-buttons staff-edit">Edit</button>
-    <button type="button" class="btn btn-link staff-buttons staff-delete">Delete</button>
+    <button type="button" class="btn btn-outline-warning staff-buttons staff-edit">Edit</button>
+    <button type="button" class="btn btn-outline-danger staff-buttons staff-delete">Delete</button>
     </div>
     </div>`;
   } else {
@@ -35,11 +35,6 @@ const staffsCard = (staffs) => {
     <p class="card-text staffId">Id: ${staffs.id}</p>
     <p class="card-text phone">Phone: ${staffs.phone}</p>
     <p class="card-footer email">Email: ${staffs.email}</p>
-<<<<<<< HEAD
-=======
-    <button type="button" class="btn btn-link staff-buttons hide staff-edit-button">Edit</button>
-    <button type="button" class="btn btn-link staff-buttons staff-delete-button" id="${staffs.id}">Delete</button>
->>>>>>> master
     </div>
     </div>`;
   }
