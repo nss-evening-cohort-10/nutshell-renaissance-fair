@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import $ from 'jquery';
+import staffBuilder from '../../components/staffBuilder/staffBuilder';
 
 const authenticate = $('.logInButton');
 const souvenirs = $('#souvenirs');
@@ -18,6 +19,7 @@ const checkLoginStatus = () => {
       foods.addClass('hide');
       shows.addClass('hide');
       staff.addClass('hide');
+      staffBuilder.printStaffCards();
     } else {
       logout.addClass('hide');
       authenticate.removeClass('hide');
@@ -25,6 +27,7 @@ const checkLoginStatus = () => {
       foods.addClass('hide');
       shows.addClass('hide');
       staff.addClass('hide');
+      staffBuilder.printStaffCards();
     }
   });
 };
