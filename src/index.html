@@ -14,7 +14,7 @@
         <button class="logInButton"><img class="loginImage" src="javascripts/components/Auth/logInGoogle.png"></button>
         <button class="btn btn-outline-danger logout hide">Logout</button>
     </nav>
-
+<!-- Souvenir modal -->
     <div class="modal fade" id="addSouvenirModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -63,6 +63,64 @@
           </div>
         </div>
       </div>
+      <!-- end souvenir modal -->
+
+      <!-- staff modal -->
+      <div class="modal fade" id="addStaffModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Staff Member</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="staff-name">Name</label>
+                  <input type="text" class="form-control" id="staff-name" placeholder="Enter Staff Name">
+                </div>
+                <div class="form-group">
+                  <label for="staff-phone">Phone</label>
+                  <input type="text" class="form-control" id="staff-phone" placeholder="Enter Phone">
+                </div>
+                <div class="form-group">
+                  <label for="image-url">Image URL</label>
+                  <input type="text" class="form-control" id="staff-image-url" placeholder="Enter Image URL">
+                </div>
+                
+                <div class="form-group">
+                  <label for="souvenir-Description">Description</label>
+                  <input type="text" class="form-control" id="souvenir-description" placeholder="Enter description">
+                </div>
+                <div class="form-group">
+                  <label for="staff-email">Type</label>
+                  <input type="text" class="form-control" id="staff-email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="employee-id">Employee Id</label>
+                  <input type="text" class="form-control" id="employee-id" placeholder="Enter Employee Id">
+                </div>
+                <div class="form-group">
+                  <label for="staff-role">Location</label>
+                  <input type="text" class="form-control" id="staff-role" placeholder="Enter Role">
+                </div>
+                <div class="form-group">
+                  <label for="staff-location">Location</label>
+                  <input type="text" class="form-control" id="staff-location" placeholder="Enter location">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary add-new-pin" id="add-new-staff">Add Staff</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Staff Modal -->
+
 
   <div id="boards"></div>
   <div id="souvenirs"></div>

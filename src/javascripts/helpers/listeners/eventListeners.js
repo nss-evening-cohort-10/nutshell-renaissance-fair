@@ -2,6 +2,7 @@ import $ from 'jquery';
 import addS from '../../components/newSouvenir/newSouvenir';
 import deleteS from '../../components/deleteSouvenir/deleteSouvenir';
 import staffDelete from '../../components/staffDELETE/staffDELETE';
+import addStaff from '../../components/staffAdd/staffAdd';
 
 const eventListeners = () => {
   $('#Shows-button').click(() => {
@@ -24,6 +25,7 @@ const eventListeners = () => {
   $('#add-new-souvenir').click(addS.addNewSouvenirCard);
   $('body').on('click', '.deleteSouvenir', deleteS.deleteSingleSouvenir);
   $('body').on('click', '.staff-delete-button', staffDelete.deleteStaffMember);
+  $('#add-new-staff').click(addStaff.addStaffCard);
 
   // $('.staffCard').hover(() => {
   //   $('.staff-delete-button').removeClass('hide');
