@@ -20,4 +20,6 @@ const getSouvenirData = () => new Promise((resolve, reject) => {
 
 const addNewSouvenir = (newSouvenir) => axios.post(`${baseUrl}/souvenirs.json`, newSouvenir);
 
-export default { getSouvenirData, addNewSouvenir };
+const deleteSouvenir = (singleSouvenir) => axios.delete(`${baseUrl}/souvenirs/${singleSouvenir}.json`);
+
+export default { getSouvenirData, addNewSouvenir, deleteSouvenir };

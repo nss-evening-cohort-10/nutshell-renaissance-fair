@@ -19,5 +19,6 @@ const getStaffsData = () => new Promise((resolve, reject) => {
 });
 
 const addNewStaff = (newStaff) => axios.post(`${baseUrl}/staffs.json`, newStaff);
+const deleteStaffCard = (staffMemberId) => axios.delete(`${baseUrl}/staffs/${staffMemberId}.json`);
 
-export default { getStaffsData, addNewStaff };
+export default { getStaffsData, addNewStaff, deleteStaffCard };
