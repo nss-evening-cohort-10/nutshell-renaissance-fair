@@ -28,7 +28,7 @@
   },
   "food4": {
 		"name": "Funnel Cake",
-		"description": "These delicious blueberry funnel cakes are made with love and blueberries. Also Available without blueberries.",
+		"description": "These delicious blueberry funnel cakes are made with love and blueberries. Also Available without blueberries. Not available without love.",
 		"price": 5,
 		"location": "Concessions stand 3",
 		"type": "food",
