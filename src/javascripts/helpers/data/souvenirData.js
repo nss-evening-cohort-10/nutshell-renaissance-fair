@@ -24,9 +24,12 @@ const addNewSouvenir = (newSouvenir) => axios.post(`${baseUrl}/souvenirs.json`, 
 
 const deleteSouvenir = (singleSouvenir) => axios.delete(`${baseUrl}/souvenirs/${singleSouvenir}.json`);
 
+const updateSouvenir = (souvenirId, updatedSouvenir) => axios.put(`${baseUrl}/souvenirs/${souvenirId}.json`, updatedSouvenir);
+
 export default {
   getSouvenirData,
   addNewSouvenir,
   deleteSouvenir,
   getSouvenirById,
+  updateSouvenir,
 };

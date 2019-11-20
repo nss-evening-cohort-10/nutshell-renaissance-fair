@@ -27,6 +27,7 @@ const eventListeners = () => {
   $('body').on('click', '.staff-delete-button', staffDelete.deleteStaffMember);
   $('#add-new-staff').click(addStaff.addStaffCard);
   $('body').on('click', '.updateSouvenirButton', update.getPreFilledModal);
+  $('body').on('click', '.update-souvenir-button', update.updateSouvenirItem);
 
   // $('.staffCard').hover(() => {
   //   $('.staff-delete-button').removeClass('hide');

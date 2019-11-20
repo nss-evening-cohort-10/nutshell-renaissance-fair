@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import souvenirData from '../../helpers/data/souvenirData';
 // import souvenirData from '../../helpers/data/souvenirData';
+import build from '../souvenirs/souvenirs';
 
 const getPreFilledModal = (event) => {
   const souvenirId = event.target.id.split('update-')[1];
@@ -21,4 +22,27 @@ const getPreFilledModal = (event) => {
     .catch((error) => console.error(error));
 };
 
-export default { getPreFilledModal };
+const updateSouvenirItem = (event) => {
+  event.stopImmediatePropagation();
+  const souvenirId = event.target.id;
+  console.log(souvenirId);
+  const updatedSouvenir = {
+    name: $('#update-souvenir-name').val(),
+    imageUrl: $('#update-image-url').val(),
+    sku: $('#update-souvenir-sku').val(),
+    price: $('#update-souvenir-price').val(),
+    type: $('#update-souvenir-type').val(),
+    quantity: $('#update-souvenir-quantity').val(),
+    location: $('#update-souvenir-location').val(),
+  };
+  console.log(updatedSouvenir);
+  souvenirData.updateSouvenir(souvenirId, updatedSouvenir)
+    .then(() => {
+      $('#updateSouvenirModal').modal('hide');
+      $('#souvenirs').removeClass('hide');
+      build.buildSouvenirs();
+    })
+    .catch((error) => console.error(error));
+};
+
+export default { getPreFilledModal, updateSouvenirItem };
