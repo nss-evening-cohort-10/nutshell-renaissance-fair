@@ -8,7 +8,7 @@ const addNewSouvenirCard = (e) => {
   const newSouvenir = {
     name: $('#souvenir-name').val(),
     imageUrl: $('#image-url').val(),
-    description: $('#souvenir-description').val(),
+    sku: $('#souvenir-sku').val(),
     price: $('#souvenir-price').val(),
     type: $('#souvenir-type').val(),
     quantity: $('#souvenir-quantity').val(),
