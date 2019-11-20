@@ -19,8 +19,10 @@ const staffsCard = (staffs) => {
     <p class="card-text staffId">Id: ${staffs.id}</p>
     <p class="card-text phone">Phone: ${staffs.phone}</p>
     <p class="card-footer email">Email: ${staffs.email}</p>
-    <button type="button" class="btn btn-outline-warning staff-buttons staff-edit">Edit</button>
-    <button type="button" class="btn btn-outline-danger staff-buttons staff-delete">Delete</button>
+    <button id="update-${staffs.id}" type="button" class="btn btn-outline-warning staff-edit" data-toggle="modal" data-target="#updateStaffModal">
+      Edit
+    </button>
+    <button id="${staffs.id}" type="button" class="btn btn-outline-danger staff-delete-button">Delete</button>
     </div>
     </div>`;
   } else {
