@@ -30,7 +30,7 @@ const addAFood = (e) => {
   };
   foodsData.addNewFood(newFood)
     .then(() => {
-      $('#foodModal').modal('hide');
+      $('#add-food-modal').modal('hide');
       // eslint-disable-next-line no-use-before-define
       buildFoods();
     })
@@ -99,7 +99,7 @@ const buildFoods = () => {
       domString += '</div>';
       utilities.printToDom('foods', domString);
       $('#foods').on('click', '.delete-food', deleteAFood);
-      $('#foods').on('click', '#add-new-food', addAFood);
+      $('#add-new-food').click(addAFood);
       $('#foods').on('click', '.update-food', openUpdateModal);
       $('.update-food-button').click(updateAFood);
     })

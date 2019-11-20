@@ -7,7 +7,7 @@ const souvenirDomString = (souvenirs) => {
   const userSignedIn = firebase.auth().currentUser;
   if (userSignedIn) {
     domString += `
-    <div class="card col-3">
+    <div class="card singleCard col-3">
     <h2 class="title text-center">${souvenirs.name}</h2>
     <div class="d-flex justify-content-center">
     <img src=${souvenirs.imageUrl} class="card-img-top d-flex align-content-center" alt="${souvenirs.name}">
@@ -15,11 +15,11 @@ const souvenirDomString = (souvenirs) => {
     <div class="card-body text-center">
     <p class="card-text">Price: $${souvenirs.price / 100}</p>
     <p class="card-text">SKU: ${souvenirs.sku}</p>
-    <p class="card-footer">Quantity: ${souvenirs.quantity}</p>
-    <p class="card-footer">Located at the: ${souvenirs.location}</p>
-    <p class="card-footer">
+    <p>Quantity: ${souvenirs.quantity}</p>
+    <p>Located at the: ${souvenirs.location}</p>
+    <p class="card-footer souvenirFooter">
     <button class="btn btn-outline-danger deleteSouvenir" id="${souvenirs.id}">Delete</button>
-    <button type="button" class="btn btn-primary updateSouvenirButton" id="update-${souvenirs.id}">
+    <button type="button" class="btn btn-outline-warning updateSouvenirButton" id="update-${souvenirs.id}">
       Edit Souvenir
     </button>
     </p>
