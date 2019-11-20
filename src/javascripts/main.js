@@ -9,13 +9,11 @@ import boardData from './helpers/data/boardData';
 import login from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import logout from './components/Auth/logout';
-import update from './components/souvenirsUpdate/souvenirsUpdate';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   souvenirData.getSouvenirData();
   dashboard.buildTheDashboard(boardData.getBoards());
-  update.getPreFilledModal();
   login.logInButton();
   authData.checkLoginStatus();
   logout.logoutEvent();

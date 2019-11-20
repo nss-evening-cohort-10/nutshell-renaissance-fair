@@ -1,14 +1,16 @@
 import $ from 'jquery';
 import axios from 'axios';
 import apiKeys from '../../helpers/apiKeys.json';
-import souvenirData from '../../helpers/data/souvenirData';
+// import souvenirData from '../../helpers/data/souvenirData';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const getPreFilledModal = (event) => {
   const souvenirId = event.target.id;
+  console.log('souvenirid', souvenirId);
   axios.get(`${baseUrl}/souvenirs/${souvenirId}.json`)
-    .then((souvenirs) => {
+    .then((response) => {
+      const souvenirs = response.data;
       const updatedSouvenir = {
         name: $('#souvenir-name').val(`${souvenirs.name}`),
         imageUrl: $('#image-url').val(`${souvenirs.imageUrl}`),

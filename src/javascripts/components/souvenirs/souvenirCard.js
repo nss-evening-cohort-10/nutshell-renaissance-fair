@@ -19,7 +19,9 @@ const souvenirDomString = (souvenirs) => {
     <p class="card-footer">${souvenirs.location}</p>
     <p class="card-footer">
     <button class="btn btn-outline-danger deleteSouvenir" id="${souvenirs.id}">Delete</button>
-    <button class="btn btn-outline-danger editSouvenir" id="${souvenirs.id}">Edit Souvenir</button>
+    <button type="button" class="btn btn-primary updateSouvenirButton" id="${souvenirs.id}"data-toggle="modal" data-target="#updateSouvenirModal">
+      Edit Souvenir
+    </button>
     </p>
     </div>
     </div>`;
