@@ -1,26 +1,22 @@
 import $ from 'jquery';
-import axios from 'axios';
-import apiKeys from '../../helpers/apiKeys.json';
+import souvenirData from '../../helpers/data/souvenirData';
 // import souvenirData from '../../helpers/data/souvenirData';
 
-const baseUrl = apiKeys.firebaseKeys.databaseURL;
-
 const getPreFilledModal = (event) => {
-  const souvenirId = event.target.id;
+  const souvenirId = event.target.id.split('update-')[1];
   console.log('souvenirid', souvenirId);
-  axios.get(`${baseUrl}/souvenirs/${souvenirId}.json`)
+  souvenirData.getSouvenirById(souvenirId)
     .then((response) => {
-      const souvenirs = response.data;
-      const updatedSouvenir = {
-        name: $('#souvenir-name').val(`${souvenirs.name}`),
-        imageUrl: $('#image-url').val(`${souvenirs.imageUrl}`),
-        sku: $('#souvenir-sku').val(`${souvenirs.sku}`),
-        price: $('#souvenir-price').val(`${souvenirs.price}`),
-        type: $('#souvenir-type').val(`${souvenirs.type}`),
-        quantity: $('#souvenir-quantity').val(`${souvenirs.quantity}`),
-        location: $('#souvenir-location').val(`${souvenirs.location}`),
-      };
-      console.log(updatedSouvenir);
+      $('#updateSouvenirModal').modal('show');
+      const souvenir = response.data;
+      $('#update-souvenir-name').val(souvenir.name);
+      $('#update-image-url').val(souvenir.imageUrl);
+      $('#update-souvenir-sku').val(souvenir.sku);
+      $('#update-souvenir-price').val(souvenir.price);
+      $('#update-souvenir-type').val(souvenir.type);
+      $('#update-souvenir-quantity').val(souvenir.quantity);
+      $('#update-souvenir-location').val(souvenir.location);
+      $('.update-souvenir-button').attr('id', souvenirId);
     })
     .catch((error) => console.error(error));
 };

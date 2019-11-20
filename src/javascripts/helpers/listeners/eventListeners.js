@@ -11,7 +11,6 @@ const eventListeners = () => {
     $('#shows').removeClass('hide');
   });
   $('#Souvenirs-button').click(() => {
-    console.error('souvenir button');
     $('#boards').addClass('hide');
     $('#souvenirs').removeClass('hide');
   });
