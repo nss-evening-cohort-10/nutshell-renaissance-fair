@@ -10,7 +10,7 @@ const souvenirDomString = (souvenirs) => {
     <div class="card singleCard col-3">
     <h2 class="title text-center">${souvenirs.name}</h2>
     <div class="d-flex justify-content-center">
-    <img src=${souvenirs.imageUrl} class="card-img-top d-flex align-content-center" alt="${souvenirs.name}">
+    <img src=${souvenirs.imageUrl} class="card-img-top souvenir-image d-flex align-content-center" alt="${souvenirs.name}">
     </div>
     <div class="card-body text-center">
     <p class="card-text">Price: $${souvenirs.price / 100}</p>

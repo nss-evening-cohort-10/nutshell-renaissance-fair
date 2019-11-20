@@ -1,17 +1,18 @@
-.card-img-top {
+.souvenir-image {
   height: 200px;
   width: 200px;
 }
 
-.card {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 1px;
-  padding: 1px;
-}
+// .card {
+  
+// }
 
 .singleCard {
   border: 4px solid;
   border-color:rgb(147, 5, 5);
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1px;
+  padding: 1px;
 }
 
