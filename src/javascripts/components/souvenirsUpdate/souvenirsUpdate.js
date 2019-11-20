@@ -5,7 +5,6 @@ import build from '../souvenirs/souvenirs';
 
 const getPreFilledModal = (event) => {
   const souvenirId = event.target.id.split('update-')[1];
-  console.log('souvenirid', souvenirId);
   souvenirData.getSouvenirById(souvenirId)
     .then((response) => {
       $('#updateSouvenirModal').modal('show');
@@ -25,7 +24,6 @@ const getPreFilledModal = (event) => {
 const updateSouvenirItem = (event) => {
   event.stopImmediatePropagation();
   const souvenirId = event.target.id;
-  console.log(souvenirId);
   const updatedSouvenir = {
     name: $('#update-souvenir-name').val(),
     imageUrl: $('#update-image-url').val(),
@@ -35,7 +33,6 @@ const updateSouvenirItem = (event) => {
     quantity: $('#update-souvenir-quantity').val(),
     location: $('#update-souvenir-location').val(),
   };
-  console.log(updatedSouvenir);
   souvenirData.updateSouvenir(souvenirId, updatedSouvenir)
     .then(() => {
       $('#updateSouvenirModal').modal('hide');

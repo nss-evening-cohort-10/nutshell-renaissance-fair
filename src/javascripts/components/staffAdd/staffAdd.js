@@ -13,7 +13,6 @@ const addStaffCard = (e) => {
     role: $('#staff-role').val(),
     location: $('#staff-location').val(),
   };
-  console.log(newStaffMember);
   staffsData.addNewStaff(newStaffMember)
     .then(() => {
       $('#addStaffModal').modal('hide');
