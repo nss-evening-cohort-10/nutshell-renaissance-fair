@@ -17,4 +17,6 @@ const getFoods = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getFoods };
+const deleteFood = (foodId) => axios.delete(`${baseUrl}/foods/${foodId}.json`);
+
+export default { getFoods, deleteFood };
