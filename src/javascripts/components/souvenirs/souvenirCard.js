@@ -19,7 +19,7 @@ const souvenirDomString = (souvenirs) => {
     <p class="card-footer">Located at the: ${souvenirs.location}</p>
     <p class="card-footer">
     <button class="btn btn-outline-danger deleteSouvenir" id="${souvenirs.id}">Delete</button>
-    <button type="button" class="btn btn-primary updateSouvenirButton" id="update-${souvenirs.id}">
+    <button type="button" class="btn btn-outline-warning updateSouvenirButton" id="update-${souvenirs.id}">
       Edit Souvenir
     </button>
     </p>
