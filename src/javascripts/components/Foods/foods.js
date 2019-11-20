@@ -18,8 +18,11 @@ const deleteAFood = (e) => {
 const buildFoods = () => {
   foodsData.getFoods()
     .then((foods) => {
-      let domString = '<h2 class="text-center header">Food</h2>';
-      domString += ' <div class="d-flex flex-wrap" id="foodsCards">';
+      let domString = '<div id="food-header">';
+      domString += '<h1 class="text-center header">Food</h1>';
+      domString += '<button class="btn btn-success" id="add-food-button">Add new food item</button>';
+      domString += '</div>';
+      domString += '<div class="d-flex flex-wrap" id="foodsCards">';
       foods.forEach((food) => {
         domString += foodsCard.makeAFood(food);
       });
