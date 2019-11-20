@@ -18,7 +18,15 @@ const getStaffsData = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getStaffById = (staffId) => axios.get(`${baseUrl}/staffs/${staffId}.json`);
 const addNewStaff = (newStaff) => axios.post(`${baseUrl}/staffs.json`, newStaff);
 const deleteStaffCard = (staffMemberId) => axios.delete(`${baseUrl}/staffs/${staffMemberId}.json`);
+const updateStaff = (staffId, updatedStaff) => axios.put(`${baseUrl}/staffs/${staffId}.json`, updatedStaff);
 
-export default { getStaffsData, addNewStaff, deleteStaffCard };
+export default {
+  getStaffById,
+  getStaffsData,
+  addNewStaff,
+  deleteStaffCard,
+  updateStaff,
+};
