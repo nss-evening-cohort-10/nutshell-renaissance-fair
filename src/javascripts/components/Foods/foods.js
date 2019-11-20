@@ -1,3 +1,5 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import $ from 'jquery';
 import foodsData from '../../helpers/data/foodsData';
 import foodsCard from '../FoodsCard/foodsCard';
@@ -28,7 +30,7 @@ const addAFood = (e) => {
   };
   foodsData.addNewFood(newFood)
     .then(() => {
-      $('#foodModal').modal('hide');
+      $('#add-food-modal').modal('hide');
       // eslint-disable-next-line no-use-before-define
       buildFoods();
     })
@@ -75,20 +77,29 @@ const updateAFood = (e) => {
 };
 
 const buildFoods = () => {
+  const userSignedIn = firebase.auth().currentUser;
   foodsData.getFoods()
     .then((foods) => {
-      let domString = '<div id="food-header">';
-      domString += '<h1 class="text-center header">Food</h1>';
-      domString += '<button class="btn btn-success" id="add-food-button" data-toggle="modal" data-target="#add-food-modal">Add new food item</button>';
-      domString += '</div>';
-      domString += '<div class="d-flex flex-wrap" id="foodsCards">';
+      let domString = '';
+      if (userSignedIn) {
+        domString = '<div id="food-header">';
+        domString += '<h1 class="text-center header">Food</h1>';
+        domString += '<button class="btn btn-success" id="add-food-button" data-toggle="modal" data-target="#add-food-modal">Add new food item</button>';
+        domString += '</div>';
+        domString += '<div class="d-flex flex-wrap" id="foodsCards">';
+      } else {
+        domString = '<div id="food-header">';
+        domString += '<h1 class="text-center header">Food</h1>';
+        domString += '</div>';
+        domString += '<div class="d-flex flex-wrap" id="foodsCards">';
+      }
       foods.forEach((food) => {
         domString += foodsCard.makeAFood(food);
       });
       domString += '</div>';
       utilities.printToDom('foods', domString);
       $('#foods').on('click', '.delete-food', deleteAFood);
-      $('#foods').on('click', '#add-new-food', addAFood);
+      $('#add-new-food').click(addAFood);
       $('#foods').on('click', '.update-food', openUpdateModal);
       $('.update-food-button').click(updateAFood);
     })
