@@ -17,6 +17,7 @@ const checkLoginStatus = () => {
     if (user) {
       logout.removeClass('hide');
       authenticate.addClass('hide');
+      $('.createButton').removeClass('hide');
     } else {
       logout.addClass('hide');
       authenticate.removeClass('hide');
