@@ -2,7 +2,7 @@
 	"souvenir1": {
 		"name": "Nobleman's Costume",
 		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/03/MCI-257.png",
-		"description": "A doublet worn by the noble class in the medieval times.",
+    "sku": "cos43",
 		"price": 2799,
 		"type": "costume",
 		"quantity": 9,
@@ -11,7 +11,7 @@
 	"souvenir2": {
 		"name": "Renaissance Boots",
 		"imageUrl": "http://www.bytheswordinc.com/images/product/large/GB1169.jpg",
-		"description": "A nobles boots",
+    "sku": "sh923",
 		"price": 5999,
 		"type": "shoes",
 		"quantity": 4,
@@ -20,7 +20,7 @@
 	"souvenir3": {
 		"name": "Rustic Mug",
 		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/04/CC11711.png",
-		"description": "Beer mug",
+    "sku": "mu345",
 		"price": 1499,
 		"type": "mug",
 		"quantity": 13,
@@ -29,7 +29,7 @@
 	"souvenir4": {
 		"name": "Family Banners",
 		"imageUrl": "https://www.bytheswordinc.com/images/product/large/GH0063.jpg",
-		"description": "Rep your family like the medieval knights used to",
+    "sku": "ban958",
 		"price": 2000,
 		"type": "banner",
 		"quantity": 56,
@@ -38,7 +38,7 @@
 	"souvenir5": {
 		"name": "Knights Costume",
 		"imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51jrtE8sCUL._AC_.jpg",
-		"description": "Want to be a Knight?",
+    "sku": "cos465",
 		"price": 14599,
 		"type": "costume",
 		"quantity": 3,
@@ -47,7 +47,7 @@
 	"souvenir6": {
 		"name": "Excalibur",
 		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/04/NP-G-BL002.png",
-		"description": "Are you worthy?",
+		"sku": "swo194",
 		"price": 1599,
 		"type": "sword",
 		"quantity": 102,
@@ -56,7 +56,7 @@
 	"souvenir7": {
 		"name": "Childrens Queen Crown",
 		"imageUrl": "https://images.neimanmarcus.com/ca/2/product_assets/H/C/P/K/9/NMHCPK9_mz.jpg",
-		"description": "My Queen",
+    "sku": "cro720",
 		"price": 1359,
 		"type": "crown",
 		"quantity": 113,
@@ -65,7 +65,7 @@
 	"souvenir8": {
 		"name": "Childrens King Crown",
 		"imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71IldM373jL._AC_UX679_.jpg",
-		"description": "My King",
+    "sku": "cro736",
 		"price": 1359,
 		"type": "crown",
 		"quantity": 145,
