@@ -14,7 +14,6 @@ const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   souvenirData.getSouvenirData();
   dashboard.buildTheDashboard(boardData.getBoards());
-
   login.logInButton();
   authData.checkLoginStatus();
   logout.logoutEvent();

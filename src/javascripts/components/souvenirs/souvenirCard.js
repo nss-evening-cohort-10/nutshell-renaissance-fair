@@ -13,13 +13,15 @@ const souvenirDomString = (souvenirs) => {
     <img src=${souvenirs.imageUrl} class="card-img-top d-flex align-content-center" alt="${souvenirs.name}">
     </div>
     <div class="card-body text-center">
-    <p class="card-text">$${souvenirs.price / 100}</p>
-    <p class="card-text">${souvenirs.description}</p>
-    <p class="card-footer">${souvenirs.quantity}</p>
-    <p class="card-footer">${souvenirs.location}</p>
+    <p class="card-text">Price: $${souvenirs.price / 100}</p>
+    <p class="card-text">SKU: ${souvenirs.sku}</p>
+    <p class="card-footer">Quantity: ${souvenirs.quantity}</p>
+    <p class="card-footer">Located at the: ${souvenirs.location}</p>
     <p class="card-footer">
     <button class="btn btn-outline-danger deleteSouvenir" id="${souvenirs.id}">Delete</button>
-    <button class="btn btn-outline-danger editSouvenir" id="${souvenirs.id}">Edit Souvenir</button>
+    <button type="button" class="btn btn-primary updateSouvenirButton" id="update-${souvenirs.id}">
+      Edit Souvenir
+    </button>
     </p>
     </div>
     </div>`;

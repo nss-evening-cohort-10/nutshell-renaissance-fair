@@ -3,6 +3,7 @@ import addS from '../../components/newSouvenir/newSouvenir';
 import deleteS from '../../components/deleteSouvenir/deleteSouvenir';
 import staffDelete from '../../components/staffDELETE/staffDELETE';
 import addStaff from '../../components/staffAdd/staffAdd';
+import update from '../../components/souvenirsUpdate/souvenirsUpdate';
 
 const eventListeners = () => {
   $('#Shows-button').click(() => {
@@ -10,7 +11,6 @@ const eventListeners = () => {
     $('#shows').removeClass('hide');
   });
   $('#Souvenirs-button').click(() => {
-    console.error('souvenir button');
     $('#boards').addClass('hide');
     $('#souvenirs').removeClass('hide');
   });
@@ -26,6 +26,8 @@ const eventListeners = () => {
   $('body').on('click', '.deleteSouvenir', deleteS.deleteSingleSouvenir);
   $('body').on('click', '.staff-delete-button', staffDelete.deleteStaffMember);
   $('#add-new-staff').click(addStaff.addStaffCard);
+  $('body').on('click', '.updateSouvenirButton', update.getPreFilledModal);
+  $('body').on('click', '.update-souvenir-button', update.updateSouvenirItem);
 
   // $('.staffCard').hover(() => {
   //   $('.staff-delete-button').removeClass('hide');

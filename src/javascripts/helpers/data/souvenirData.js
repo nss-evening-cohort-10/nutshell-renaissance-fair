@@ -18,8 +18,18 @@ const getSouvenirData = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getSouvenirById = (souvenirId) => axios.get(`${baseUrl}/souvenirs/${souvenirId}.json`);
+
 const addNewSouvenir = (newSouvenir) => axios.post(`${baseUrl}/souvenirs.json`, newSouvenir);
 
 const deleteSouvenir = (singleSouvenir) => axios.delete(`${baseUrl}/souvenirs/${singleSouvenir}.json`);
 
-export default { getSouvenirData, addNewSouvenir, deleteSouvenir };
+const updateSouvenir = (souvenirId, updatedSouvenir) => axios.put(`${baseUrl}/souvenirs/${souvenirId}.json`, updatedSouvenir);
+
+export default {
+  getSouvenirData,
+  addNewSouvenir,
+  deleteSouvenir,
+  getSouvenirById,
+  updateSouvenir,
+};
