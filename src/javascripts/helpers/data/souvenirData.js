@@ -13,7 +13,6 @@ const getSouvenirData = () => new Promise((resolve, reject) => {
         souvenirs.push(theSouvenirs[fbId]);
       });
       resolve(souvenirs);
-      console.log(souvenirs);
     })
     .catch((error) => reject(error));
 });

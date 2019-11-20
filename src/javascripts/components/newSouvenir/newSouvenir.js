@@ -14,7 +14,6 @@ const addNewSouvenirCard = (e) => {
     quantity: $('#souvenir-quantity').val(),
     location: $('#souvenir-location').val(),
   };
-  console.log(newSouvenir);
   souvenirData.addNewSouvenir(newSouvenir)
     .then(() => {
       $('#addSouvenirModal').modal('hide');
