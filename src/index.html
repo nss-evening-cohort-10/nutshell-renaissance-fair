@@ -121,6 +121,7 @@
       </div>
       <!-- End Staff Modal -->
 
+
       <!-- Start update souvenir modal-->
 
       <div class="modal fade" id="updateSouvenirModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -174,6 +175,58 @@
 
         <!-- end souvenir update modal-->
       
+
+      <!-- Add food modal-->
+      <div class="modal fade" id="add-food-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Food Item</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="food-name">Name</label>
+                  <input type="text" class="form-control" id="food-name" placeholder="Enter Food Name">
+                </div>
+                <div class="form-group">
+                  <label for="food-description">Description</label>
+                  <input type="text" class="form-control" id="food-description" placeholder="Enter Food Description">
+                </div>
+                <div class="form-group">
+                  <label for="food-price">Price</label>
+                  <input type="text" class="form-control" id="food-price" placeholder="Enter Food Price">
+                </div>
+                <div class="form-group">
+                  <label for="food-location">Location</label>
+                  <input type="text" class="form-control" id="food-location" placeholder="Enter Location">
+                </div>
+                <div class="form-group">
+                  <label for="food-type">Type</label>
+                  <input type="text" class="form-control" id="food-type" placeholder="Enter Type">
+                </div>
+                <div class="form-group">
+                  <label for="food-quantity">Quantity</label>
+                  <input type="text" class="form-control" id="food-quantity" placeholder="Enter Quantity">
+                </div>
+                <div class="form-group">
+                  <label for="food-image-url">Image URL</label>
+                  <input type="text" class="form-control" id="food-image-url" placeholder="Enter Image URL">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="add-new-food">Add Food Item</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end add food modal-->
+
 
 
   <div id="boards"></div>
