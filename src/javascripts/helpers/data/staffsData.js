@@ -13,7 +13,6 @@ const getStaffsData = () => new Promise((resolve, reject) => {
         staffs.push(theStaffs[fbId]);
       });
       resolve(staffs);
-      console.log(staffs);
     })
     .catch((error) => reject(error));
 });
