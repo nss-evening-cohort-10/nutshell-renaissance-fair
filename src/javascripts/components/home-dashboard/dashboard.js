@@ -8,12 +8,13 @@ const buildTheDashboard = (boardArray) => {
   for (let i = 0; i < boardArray.length; i += 1) {
     const board = boardArray[i];
     domString += `
+    
     <div class="card col-4 dashboard-card">
     <img src="${board.imageUrl}" class="dashboard-image" alt="...">
-    <div class="card-body d-flex justify-content-center">
-    <button id="${board.id}-button" class="btn btn-outline-light dashboard-button">${board.id}</button>
-    </div>
-  </div>`;
+      <div class="card-body d-flex justify-content-center">
+        <button id="${board.id}-button" class="btn btn-outline-light dashboard-button">${board.id}</button>
+      </div>
+    </div>`;
   }
   domString += '</div>';
   domString += `<div id="footer" class="text-center">
