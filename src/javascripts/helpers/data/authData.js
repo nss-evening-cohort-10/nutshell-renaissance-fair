@@ -7,6 +7,7 @@ import foods from '../../components/Foods/foods';
 import dashboard from '../../components/home-dashboard/dashboard';
 import boardData from './boardData';
 import events from '../listeners/eventListeners';
+import shows from '../../components/shows/shows';
 
 const authenticate = $('.logInButton');
 const logout = $('.logout');
@@ -27,6 +28,7 @@ const checkLoginStatus = () => {
     souvenirs.buildSouvenirs();
     foods.buildFoods();
     events.eventListeners();
+    shows.printShows();
   });
 };
 
