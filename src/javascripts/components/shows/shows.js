@@ -88,18 +88,32 @@ const editShowEvent = (e) => {
     .then((show) => {
       $('#edit-show-name').val(show.name);
       $('#edit-show-location').val(show.location);
-      $('#edit-show-date').val(new Date(show.date).toLocaleDateString('en-CA'));
+      $('#edit-show-date').val(moment(show.date).format('YYYY-MM-DD'));
       $('#edit-show-price').val(show.ticket_Price);
       $('#edit-show-image-url').val(show.imageUrl);
-      // set the id of the modal-footer, so I can get it when the user wants to submit
+      // set the id of the modal-footer, so I can access it on the submit event listener
       $('#edit-show-modal').find('.modal-footer').attr('id', idToEdit);
     })
     .catch((err) => console.error('Error getting show by id', err));
 };
 
 const updateShowEvent = (e) => {
-  const idToEdit = e.target.parentNode.id;
-  console.log(idToEdit);
+  const idToUpdate = e.target.parentNode.id;
+
+  const updatedShow = {
+    name: $('#edit-show-name').val(),
+    location: $('#edit-show-location').val(),
+    date: $('#edit-show-date').val(),
+    ticket_Price: $('#edit-show-price').val() * 1,
+    imageUrl: $('#edit-show-image-url').val(),
+  };
+
+  showData.putShow(idToUpdate, updatedShow)
+    .then(() => {
+      $('#edit-show-modal').modal('hide');
+      printShows();
+    })
+    .catch((err) => console.error('Error updating show', err));
 };
 
 export default {
