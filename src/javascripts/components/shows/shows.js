@@ -1,4 +1,7 @@
 import moment from 'moment';
+import $ from 'jquery';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import showData from '../../helpers/data/showData';
 import utilities from '../../helpers/utilities';
 import './shows.scss';
@@ -22,10 +25,15 @@ const buildShowCard = (show) => {
 };
 
 const printShows = () => {
+  const userSignedIn = firebase.auth().currentUser;
   showData.getAllShows()
     .then((shows) => {
-      let domString = '<h1 class="text-center header">Shows</h1><div class="container"><div class="row">';
-
+      let domString = '<div class="show-header text-center"><h1 class="header">Shows</h1>';
+      if (userSignedIn) {
+        domString += '<button class="btn btn-primary" id="add-show" data-toggle="modal" data-target="#add-show-modal">Add New Show</button>';
+      }
+      domString += '</div>';
+      domString += '<div class="container"><div class="row">';
       shows.forEach((show) => {
         domString += buildShowCard(show);
       });
@@ -36,4 +44,21 @@ const printShows = () => {
     .catch((err) => console.error('Error getting shows', err));
 };
 
-export default { printShows };
+const addShowEvent = (e) => {
+  e.stopImmediatePropagation();
+  const newShow = {
+    name: $('#show-name').val(),
+    location: $('#show-location').val(),
+    date: $('#show-date').val(),
+    ticket_Price: $('#show-price').val() * 1,
+    imageUrl: $('#show-image-url').val(),
+  };
+  showData.postShow(newShow)
+    .then(() => {
+      $('#add-show-modal').modal('hide');
+      printShows();
+    })
+    .catch((err) => console.error('Error adding new show', err));
+};
+
+export default { printShows, addShowEvent };

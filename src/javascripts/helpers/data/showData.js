@@ -17,4 +17,6 @@ const getAllShows = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllShows };
+const postShow = (show) => axios.post(`${baseUrl}/shows.json`, show);
+
+export default { getAllShows, postShow };
