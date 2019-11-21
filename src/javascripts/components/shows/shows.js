@@ -1,4 +1,5 @@
 import moment from 'moment';
+import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import showData from '../../helpers/data/showData';
@@ -44,7 +45,15 @@ const printShows = () => {
 };
 
 const addShowEvent = (e) => {
-  console.log(e.target);
+  e.stopImmediatePropagation();
+  const newShow = {
+    name: $('#show-name').val(),
+    location: $('#show-location').val(),
+    date: $('#show-date').val(),
+    ticket_Price: $('#show-price').val() * 1,
+    imageUrl: $('#show-image-url').val(),
+  };
+  console.log(newShow);
 };
 
 export default { printShows, addShowEvent };
