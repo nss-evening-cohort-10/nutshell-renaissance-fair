@@ -12,7 +12,7 @@ const buildSouvenirs = () => {
       let domString = '';
       if (userSignedIn) {
         domString += '<h2 class="text-center">Souvenirs</h2>';
-        domString += '<div class="d-flex justify-content-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSouvenirModal">Add New Souvenir</button></div>';
+        domString += '<div class="d-flex justify-content-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-show-modal">Add New Souvenir</button></div>';
         domString += '<div class="cardZone d-flex flex-wrap justify-content-center" id="souvenirCards">';
       } else {
         domString += '<h2 class="text-center">Souvenirs</h2>';

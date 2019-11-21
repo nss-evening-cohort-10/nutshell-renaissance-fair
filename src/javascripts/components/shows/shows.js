@@ -29,7 +29,7 @@ const printShows = () => {
     .then((shows) => {
       let domString = '<div class="show-header text-center"><h1 class="header">Shows</h1>';
       if (userSignedIn) {
-        domString += '<button class="btn btn-primary">Add New Show</button>';
+        domString += '<button class="btn btn-primary" id="add-show" data-toggle="modal" data-target="#add-show-modal">Add New Show</button>';
       }
       domString += '</div>';
       domString += '<div class="container"><div class="row">';
@@ -43,4 +43,8 @@ const printShows = () => {
     .catch((err) => console.error('Error getting shows', err));
 };
 
-export default { printShows };
+const addShowEvent = (e) => {
+  console.log(e.target);
+};
+
+export default { printShows, addShowEvent };
