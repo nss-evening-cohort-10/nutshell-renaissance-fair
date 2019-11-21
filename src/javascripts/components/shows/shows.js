@@ -91,8 +91,15 @@ const editShowEvent = (e) => {
       $('#edit-show-date').val(new Date(show.date).toLocaleDateString('en-CA'));
       $('#edit-show-price').val(show.ticket_Price);
       $('#edit-show-image-url').val(show.imageUrl);
+      // set the id of the modal-footer, so I can get it when the user wants to submit
+      $('#edit-show-modal').find('.modal-footer').attr('id', idToEdit);
     })
     .catch((err) => console.error('Error getting show by id', err));
+};
+
+const updateShowEvent = (e) => {
+  const idToEdit = e.target.parentNode.id;
+  console.log(idToEdit);
 };
 
 export default {
@@ -100,4 +107,5 @@ export default {
   addShowEvent,
   deleteShowEvent,
   editShowEvent,
+  updateShowEvent,
 };
