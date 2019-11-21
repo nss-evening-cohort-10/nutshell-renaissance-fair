@@ -74,7 +74,11 @@ const addShowEvent = (e) => {
 
 const deleteShowEvent = (e) => {
   const idToDelete = e.target.id;
-  console.log(idToDelete);
+  showData.deleteShow(idToDelete)
+    .then(() => {
+      printShows();
+    })
+    .catch((err) => console.error('Error deleting show', err));
 };
 
 export default { printShows, addShowEvent, deleteShowEvent };

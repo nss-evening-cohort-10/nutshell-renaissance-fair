@@ -19,4 +19,6 @@ const getAllShows = () => new Promise((resolve, reject) => {
 
 const postShow = (show) => axios.post(`${baseUrl}/shows.json`, show);
 
-export default { getAllShows, postShow };
+const deleteShow = (showId) => axios.delete(`${baseUrl}/shows/${showId}.json`);
+
+export default { getAllShows, postShow, deleteShow };
