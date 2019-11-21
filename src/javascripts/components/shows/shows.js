@@ -1,4 +1,6 @@
 import moment from 'moment';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import showData from '../../helpers/data/showData';
 import utilities from '../../helpers/utilities';
 import './shows.scss';
@@ -22,10 +24,15 @@ const buildShowCard = (show) => {
 };
 
 const printShows = () => {
+  const userSignedIn = firebase.auth().currentUser;
   showData.getAllShows()
     .then((shows) => {
-      let domString = '<h1 class="text-center header">Shows</h1><div class="container"><div class="row">';
-
+      let domString = '<div class="show-header text-center"><h1 class="header">Shows</h1>';
+      if (userSignedIn) {
+        domString += '<button class="btn btn-primary">Add New Show</button>';
+      }
+      domString += '</div>';
+      domString += '<div class="container"><div class="row">';
       shows.forEach((show) => {
         domString += buildShowCard(show);
       });
