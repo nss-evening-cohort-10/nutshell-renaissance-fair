@@ -33,6 +33,7 @@ const eventListeners = () => {
   $('body').on('click', '.staff-edit', staffUpdate.getPreFilledStaffModal);
   $('body').on('click', '.update-staff-button', staffUpdate.updateStaffMember);
   $('body').on('click', '#add-new-show', shows.addShowEvent);
+  $('body').on('click', '.deleteShow', shows.deleteShowEvent);
   // $('.staffCard').hover(() => {
   //   $('.staff-delete-button').removeClass('hide');
   //   $('.edit-staff-button').removeClass('hide');

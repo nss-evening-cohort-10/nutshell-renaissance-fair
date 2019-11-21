@@ -22,7 +22,7 @@ const buildShowCard = (show) => {
   if (userSignedIn) {
     domString += `
           <button class="btn btn-outline-warning">Edit</button>
-          <button class="btn btn-outline-danger">Delete</button>
+          <button class="btn btn-outline-danger deleteShow" id="${show.id}">Delete</button>
     `;
   }
 
@@ -72,4 +72,9 @@ const addShowEvent = (e) => {
     .catch((err) => console.error('Error adding new show', err));
 };
 
-export default { printShows, addShowEvent };
+const deleteShowEvent = (e) => {
+  const idToDelete = e.target.id;
+  console.log(idToDelete);
+};
+
+export default { printShows, addShowEvent, deleteShowEvent };
