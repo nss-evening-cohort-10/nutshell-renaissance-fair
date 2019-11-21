@@ -86,7 +86,11 @@ const editShowEvent = (e) => {
   $('#edit-show-modal').modal('show');
   showData.getShowById(idToEdit)
     .then((show) => {
-      console.log(show);
+      $('#edit-show-name').val(show.name);
+      $('#edit-show-location').val(show.location);
+      $('#edit-show-date').val(new Date(show.date).toLocaleDateString('en-CA'));
+      $('#edit-show-price').val(show.ticket_Price);
+      $('#edit-show-image-url').val(show.imageUrl);
     })
     .catch((err) => console.error('Error getting show by id', err));
 };
