@@ -21,7 +21,7 @@ const buildShowCard = (show) => {
 
   if (userSignedIn) {
     domString += `
-          <button class="btn btn-outline-warning">Edit</button>
+          <button class="btn btn-outline-warning editShow" id="${show.id}">Edit</button>
           <button class="btn btn-outline-danger deleteShow" id="${show.id}">Delete</button>
     `;
   }
@@ -81,4 +81,15 @@ const deleteShowEvent = (e) => {
     .catch((err) => console.error('Error deleting show', err));
 };
 
-export default { printShows, addShowEvent, deleteShowEvent };
+const editShowEvent = (e) => {
+  const idToEdit = e.target.id;
+  $('#edit-show-modal').modal('show');
+  console.log(idToEdit);
+};
+
+export default {
+  printShows,
+  addShowEvent,
+  deleteShowEvent,
+  editShowEvent,
+};
