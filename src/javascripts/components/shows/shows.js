@@ -84,7 +84,11 @@ const deleteShowEvent = (e) => {
 const editShowEvent = (e) => {
   const idToEdit = e.target.id;
   $('#edit-show-modal').modal('show');
-  console.log(idToEdit);
+  showData.getShowById(idToEdit)
+    .then((show) => {
+      console.log(show);
+    })
+    .catch((err) => console.error('Error getting show by id', err));
 };
 
 export default {
