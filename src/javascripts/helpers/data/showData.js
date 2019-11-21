@@ -17,8 +17,24 @@ const getAllShows = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getShowById = (showId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/shows/${showId}.json`)
+    .then((response) => {
+      resolve(response.data);
+    })
+    .catch((err) => reject(err));
+});
+
 const postShow = (show) => axios.post(`${baseUrl}/shows.json`, show);
 
 const deleteShow = (showId) => axios.delete(`${baseUrl}/shows/${showId}.json`);
 
-export default { getAllShows, postShow, deleteShow };
+const putShow = (showId, show) => axios.put(`${baseUrl}/shows/${showId}.json`, show);
+
+export default {
+  getAllShows,
+  getShowById,
+  postShow,
+  deleteShow,
+  putShow,
+};

@@ -370,6 +370,48 @@
         </div>
       </div>
       <!-- End Add Show Modal -->
+      <!-- Start Edit Show Modal -->
+      <div class="modal fade" id="edit-show-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Show</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="show-name">Name</label>
+                  <input type="text" class="form-control" id="edit-show-name" placeholder="Enter Show Name">
+                </div>
+                <div class="form-group">
+                  <label for="show-price">Price</label>
+                  <input type="text" class="form-control" id="edit-show-price" placeholder="Enter Show Price">
+                </div>
+                <div class="form-group">
+                  <label for="show-location">Location</label>
+                  <input type="text" class="form-control" id="edit-show-location" placeholder="Enter Location">
+                </div>
+                <div class="form-group">
+                  <label for="show-date">Date</label>
+                  <input type="date" class="form-control" id="edit-show-date">
+                </div>
+                <div class="form-group">
+                  <label for="show-image-url">Image URL</label>
+                  <input type="text" class="form-control" id="edit-show-image-url" placeholder="Enter Image URL">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="update-show">Edit Show</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Add Show Modal -->
 
 
   <div id="boards"></div>

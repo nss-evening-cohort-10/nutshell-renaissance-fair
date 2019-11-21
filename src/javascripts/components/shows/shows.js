@@ -21,7 +21,7 @@ const buildShowCard = (show) => {
 
   if (userSignedIn) {
     domString += `
-          <button class="btn btn-outline-warning">Edit</button>
+          <button class="btn btn-outline-warning editShow" id="${show.id}">Edit</button>
           <button class="btn btn-outline-danger deleteShow" id="${show.id}">Delete</button>
     `;
   }
@@ -81,4 +81,45 @@ const deleteShowEvent = (e) => {
     .catch((err) => console.error('Error deleting show', err));
 };
 
-export default { printShows, addShowEvent, deleteShowEvent };
+const editShowEvent = (e) => {
+  const idToEdit = e.target.id;
+  $('#edit-show-modal').modal('show');
+  showData.getShowById(idToEdit)
+    .then((show) => {
+      $('#edit-show-name').val(show.name);
+      $('#edit-show-location').val(show.location);
+      $('#edit-show-date').val(moment(show.date).format('YYYY-MM-DD'));
+      $('#edit-show-price').val(show.ticket_Price);
+      $('#edit-show-image-url').val(show.imageUrl);
+      // set the id of the modal-footer, so I can access it on the submit event listener
+      $('#edit-show-modal').find('.modal-footer').attr('id', idToEdit);
+    })
+    .catch((err) => console.error('Error getting show by id', err));
+};
+
+const updateShowEvent = (e) => {
+  const idToUpdate = e.target.parentNode.id;
+
+  const updatedShow = {
+    name: $('#edit-show-name').val(),
+    location: $('#edit-show-location').val(),
+    date: $('#edit-show-date').val(),
+    ticket_Price: $('#edit-show-price').val() * 1,
+    imageUrl: $('#edit-show-image-url').val(),
+  };
+
+  showData.putShow(idToUpdate, updatedShow)
+    .then(() => {
+      $('#edit-show-modal').modal('hide');
+      printShows();
+    })
+    .catch((err) => console.error('Error updating show', err));
+};
+
+export default {
+  printShows,
+  addShowEvent,
+  deleteShowEvent,
+  editShowEvent,
+  updateShowEvent,
+};
