@@ -7,7 +7,9 @@ import utilities from '../../helpers/utilities';
 import './shows.scss';
 
 const buildShowCard = (show) => {
-  const domString = `
+  const userSignedIn = firebase.auth().currentUser;
+
+  let domString = `
     <div class="col-4">
       <div class="card">
         <img class="card-img-top" src="${show.imageUrl}" />
@@ -15,7 +17,16 @@ const buildShowCard = (show) => {
           <h2 class="card-title">${show.name}</h2>
           <p class="card-text">Location: ${show.location}</p>
           <p class="card-text">Date: ${moment(show.date).format('ddd, MMMM D, YYYY')}</p>
-          <p class="card-text">Price: $${show.ticket_Price}</p>
+          <p class="card-text">Price: $${show.ticket_Price}</p>`;
+
+  if (userSignedIn) {
+    domString += `
+          <button class="btn btn-outline-warning">Edit</button>
+          <button class="btn btn-outline-danger deleteShow" id="${show.id}">Delete</button>
+    `;
+  }
+
+  domString += `
         </div>
       </div>
     </div>
@@ -61,4 +72,13 @@ const addShowEvent = (e) => {
     .catch((err) => console.error('Error adding new show', err));
 };
 
-export default { printShows, addShowEvent };
+const deleteShowEvent = (e) => {
+  const idToDelete = e.target.id;
+  showData.deleteShow(idToDelete)
+    .then(() => {
+      printShows();
+    })
+    .catch((err) => console.error('Error deleting show', err));
+};
+
+export default { printShows, addShowEvent, deleteShowEvent };
