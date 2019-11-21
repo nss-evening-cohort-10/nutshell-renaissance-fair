@@ -53,7 +53,12 @@ const addShowEvent = (e) => {
     ticket_Price: $('#show-price').val() * 1,
     imageUrl: $('#show-image-url').val(),
   };
-  console.log(newShow);
+  showData.postShow(newShow)
+    .then(() => {
+      $('#add-show-modal').modal('hide');
+      printShows();
+    })
+    .catch((err) => console.error('Error adding new show', err));
 };
 
 export default { printShows, addShowEvent };
