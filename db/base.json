@@ -2,5 +2,10 @@
   "foods": "foods",
   "shows": "shows",
   "souvenirs": "souvenirs",
-  "staffs": "staffs"
+  "staffs": "staffs",
+  "eventFood": "eventFood",
+  "eventShow": "eventShow",
+  "eventSouvenir": "eventSouvenir",
+  "eventStaff": "eventStaff",
+  "events": "events"
 }

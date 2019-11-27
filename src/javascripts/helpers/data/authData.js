@@ -2,6 +2,10 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import $ from 'jquery';
 import newHomePage from '../../components/newHomePage/newHomePage';
+import staffs from '../../components/staffBuilder/staffBuilder';
+import souvenirs from '../../components/souvenirs/souvenirs';
+import foods from '../../components/Foods/foods';
+import shows from '../../components/shows/shows';
 
 const authenticate = $('.logInButton');
 const logout = $('.logout');
@@ -20,6 +24,10 @@ const checkLoginStatus = () => {
       authenticate.removeClass('hide');
       newHomePage.makeHomeCard();
     }
+    staffs.printStaffCards();
+    souvenirs.buildSouvenirs();
+    foods.buildFoods();
+    shows.printShows();
   });
 };
 

@@ -12,7 +12,7 @@ const getPreFilledModal = (event) => {
       $('#update-souvenir-name').val(souvenir.name);
       $('#update-image-url').val(souvenir.imageUrl);
       $('#update-sku').val(souvenir.sku);
-      $('#update-souvenir-price').val(souvenir.price);
+      $('#update-souvenir-price').val(souvenir.cost);
       $('#update-souvenir-type').val(souvenir.type);
       $('#update-souvenir-quantity').val(souvenir.quantity);
       $('#update-souvenir-location').val(souvenir.location);

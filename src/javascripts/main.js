@@ -8,10 +8,10 @@ import newHomePage from './components/newHomePage/newHomePage';
 import login from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import logout from './components/Auth/logout';
-import staffs from './components/staffBuilder/staffBuilder';
-import souvenirs from './components/souvenirs/souvenirs';
-import foods from './components/Foods/foods';
-import shows from './components/shows/shows';
+// import staffs from './components/staffBuilder/staffBuilder';
+// import souvenirs from './components/souvenirs/souvenirs';
+// import foods from './components/Foods/foods';
+// import shows from './components/shows/shows';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
@@ -20,10 +20,10 @@ const init = () => {
   login.logInButton();
   authData.checkLoginStatus();
   logout.logoutEvent();
-  staffs.printStaffCards();
-  souvenirs.buildSouvenirs();
-  foods.buildFoods();
-  shows.printShows();
+  // staffs.printStaffCards();
+  // souvenirs.buildSouvenirs();
+  // foods.buildFoods();
+  // shows.printShows();
 };
 
 init();
