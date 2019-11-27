@@ -45,7 +45,7 @@ const openUpdateModal = (e) => {
       const food = response.data;
       $('#update-food-name').val(food.name);
       $('#update-food-description').val(food.description);
-      $('#update-food-price').val(food.price);
+      $('#update-food-price').val(food.cost);
       $('#update-food-location').val(food.location);
       $('#update-food-type').val(food.type);
       $('#update-food-quantity').val(food.quantity);

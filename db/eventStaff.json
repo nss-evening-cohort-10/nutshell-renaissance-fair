@@ -1,0 +1,34 @@
+{
+  "staffEvent1": {
+		"staffId": "staff1",
+    "eventId": "event1"
+  },
+  "staffEvent2": {
+		"staffId": "staff2",
+    "eventId": "event2"
+  },
+  "staffEvent3": {
+		"staffId": "staff3",
+    "eventId": "event3"
+  },
+  "staffEvent4": {
+		"staffId": "staff4",
+    "eventId": "event3"
+  },
+  "staffEvent5": {
+		"staffId": "staff5",
+    "eventId": "event4"
+  },
+  "staffEvent6": {
+		"staffId": "staff6",
+    "eventId": "event4"
+  },
+  "staffEvent7": {
+		"staffId": "staff7",
+    "eventId": "event2"
+  },
+  "staffEvent8": {
+		"staffId": "staff8",
+    "eventId": "event1"
+  }
+}

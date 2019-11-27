@@ -17,7 +17,7 @@ const buildShowCard = (show) => {
           <h2 class="card-title">${show.name}</h2>
           <p class="card-text">Location: ${show.location}</p>
           <p class="card-text">Date: ${moment(show.date).format('ddd, MMMM D, YYYY')}</p>
-          <p class="card-text">Price: $${show.ticket_Price}</p>`;
+          <p class="card-text">Price: $${show.cost}</p>`;
 
   if (userSignedIn) {
     domString += `
@@ -89,7 +89,7 @@ const editShowEvent = (e) => {
       $('#edit-show-name').val(show.name);
       $('#edit-show-location').val(show.location);
       $('#edit-show-date').val(moment(show.date).format('YYYY-MM-DD'));
-      $('#edit-show-price').val(show.ticket_Price);
+      $('#edit-show-price').val(show.cost);
       $('#edit-show-image-url').val(show.imageUrl);
       // set the id of the modal-footer, so I can access it on the submit event listener
       $('#edit-show-modal').find('.modal-footer').attr('id', idToEdit);

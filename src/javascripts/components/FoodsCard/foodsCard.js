@@ -11,7 +11,7 @@ const makeAFood = (food) => {
   <div class="card-body">
     <h5 class="card-title">${food.name}</h5>
     <p class="card-text">${food.description}</p>
-    <p class="card-text">Price: $${food.price * 1}</p>
+    <p class="card-text">Price: $${food.cost * 1}</p>
 <button type="button" class="auth-button btn btn-outline-warning update-food" data-toggle="modal" data-target="#update-food-modal" id="update-${food.id}">Edit</button>
             <button type="button" class="delete-food auth-button btn btn-outline-danger" id="delete-${food.id}">Delete</button>
   </div>
@@ -23,7 +23,7 @@ const makeAFood = (food) => {
   <div class="card-body">
     <h5 class="card-title">${food.name}</h5>
     <p class="card-text">${food.description}</p>
-    <p class="card-text">Price: $${food.price * 1}</p>
+    <p class="card-text">Price: $${food.cost * 1}</p>
   </div>
 </div>
   `;
