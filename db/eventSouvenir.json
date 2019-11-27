@@ -1,0 +1,34 @@
+{
+  "souvenirsEvent1": {
+		"souvenirsId": "souvenirs1",
+    "eventId": "event1"
+  },
+  "souvenirsEvent2": {
+		"souvenirsId": "souvenirs2",
+    "eventId": "event2"
+  },
+  "souvenirsEvent3": {
+		"souvenirsId": "souvenirs3",
+    "eventId": "event3"
+  },
+  "souvenirsEvent4": {
+		"souvenirsId": "souvenirs4",
+    "eventId": "event3"
+  },
+  "souvenirsEvent5": {
+		"souvenirsId": "souvenirs5",
+    "eventId": "event4"
+  },
+  "souvenirsEvent6": {
+		"souvenirsId": "souvenirs6",
+    "eventId": "event4"
+  },
+  "souvenirsEvent7": {
+		"souvenirsId": "souvenirs7",
+    "eventId": "event2"
+  },
+  "souvenirsEvent8": {
+		"souvenirsId": "souvenirs8",
+    "eventId": "event1"
+  }
+}

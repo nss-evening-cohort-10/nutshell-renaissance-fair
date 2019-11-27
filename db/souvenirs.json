@@ -3,7 +3,7 @@
 		"name": "Nobleman's Costume",
 		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/03/MCI-257.png",
     "sku": "cos43",
-		"price": 2799,
+		"cost": 2799,
 		"type": "costume",
 		"quantity": 9,
 		"location": "main shop"
@@ -12,7 +12,7 @@
 		"name": "Renaissance Boots",
 		"imageUrl": "http://www.bytheswordinc.com/images/product/large/GB1169.jpg",
     "sku": "sh923",
-		"price": 5999,
+		"cost": 5999,
 		"type": "shoes",
 		"quantity": 4,
 		"location": "main shop"
@@ -21,7 +21,7 @@
 		"name": "Rustic Mug",
 		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/04/CC11711.png",
     "sku": "mu345",
-		"price": 1499,
+		"cost": 1499,
 		"type": "mug",
 		"quantity": 13,
 		"location": "main shop"
@@ -30,7 +30,7 @@
 		"name": "Family Banners",
 		"imageUrl": "https://www.bytheswordinc.com/images/product/large/GH0063.jpg",
     "sku": "ban958",
-		"price": 2000,
+		"cost": 2000,
 		"type": "banner",
 		"quantity": 56,
 		"location": "main shop"
@@ -39,7 +39,7 @@
 		"name": "Knights Costume",
 		"imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51jrtE8sCUL._AC_.jpg",
     "sku": "cos465",
-		"price": 14599,
+		"cost": 14599,
 		"type": "costume",
 		"quantity": 3,
 		"location": "main shop"
@@ -48,7 +48,7 @@
 		"name": "Excalibur",
 		"imageUrl": "https://www.medievalcollectibles.com/wp-content/uploads/2019/04/NP-G-BL002.png",
 		"sku": "swo194",
-		"price": 1599,
+		"cost": 1599,
 		"type": "sword",
 		"quantity": 102,
 		"location": "main shop"
@@ -57,7 +57,7 @@
 		"name": "Childrens Queen Crown",
 		"imageUrl": "https://images.neimanmarcus.com/ca/2/product_assets/H/C/P/K/9/NMHCPK9_mz.jpg",
     "sku": "cro720",
-		"price": 1359,
+		"cost": 1359,
 		"type": "crown",
 		"quantity": 113,
 		"location": "main shop"
@@ -66,7 +66,7 @@
 		"name": "Childrens King Crown",
 		"imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71IldM373jL._AC_UX679_.jpg",
     "sku": "cro736",
-		"price": 1359,
+		"cost": 1359,
 		"type": "crown",
 		"quantity": 145,
 		"location": "main shop"

@@ -2,7 +2,7 @@
 	"food1": {
 		"name": "Turkey Leg",
 		"description": "A massive leg of juicy turkey that will satisfy even the hungriest of fest-goers!",
-		"price": 8,
+		"cost": 8,
 		"location": "Concessions stand 1",
 		"type": "food",
 		"quantity": 79,
@@ -11,7 +11,7 @@
   "food2": {
 		"name": "Ale",
 		"description": "This medieval style brew has deep earthy flavors and a rich amber color. Be careful though, It's very strong.",
-		"price": 10,
+		"cost": 10,
 		"location": "Concessions stand 2",
 		"type": "drink",
 		"quantity": 79,
@@ -20,7 +20,7 @@
   "food3": {
 		"name": "Corn Dog",
 		"description": "These festival classics are a staple of any fair. Come grab a dog or six!",
-		"price": 3,
+		"cost": 3,
 		"location": "Concessions stand 1",
 		"type": "food",
 		"quantity": 79,
@@ -29,7 +29,7 @@
   "food4": {
 		"name": "Funnel Cake",
 		"description": "These delicious blueberry funnel cakes are made with love and blueberries. Also Available without blueberries. Not available without love.",
-		"price": 5,
+		"cost": 5,
 		"location": "Concessions stand 3",
 		"type": "food",
 		"quantity": 79,

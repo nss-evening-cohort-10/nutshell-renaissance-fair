@@ -1,13 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import $ from 'jquery';
-import staffs from '../../components/staffBuilder/staffBuilder';
-import souvenirs from '../../components/souvenirs/souvenirs';
-import foods from '../../components/Foods/foods';
-import dashboard from '../../components/home-dashboard/dashboard';
-import boardData from './boardData';
-import events from '../listeners/eventListeners';
-import shows from '../../components/shows/shows';
+import newHomePage from '../../components/newHomePage/newHomePage';
 
 const authenticate = $('.logInButton');
 const logout = $('.logout');
@@ -20,15 +14,12 @@ const checkLoginStatus = () => {
       authenticate.addClass('hide');
       $('.createButton').removeClass('hide');
     } else {
+      $('#eventHome').removeClass('eventHome');
+      $('.eventVendor').removeClass('eventVendor');
       logout.addClass('hide');
       authenticate.removeClass('hide');
+      newHomePage.makeHomeCard();
     }
-    dashboard.buildTheDashboard(boardData.getBoards());
-    staffs.printStaffCards();
-    souvenirs.buildSouvenirs();
-    foods.buildFoods();
-    events.eventListeners();
-    shows.printShows();
   });
 };
 
