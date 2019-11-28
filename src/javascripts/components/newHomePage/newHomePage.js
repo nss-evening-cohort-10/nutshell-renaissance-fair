@@ -4,11 +4,20 @@ import './newHomePage.scss';
 import dashboard from '../home-dashboard/dashboard';
 import boardData from '../../helpers/data/boardData';
 import events from '../../helpers/listeners/eventListeners';
+import realEvents from '../Events/events';
+import eventData from '../../helpers/data/eventData';
 
 
 const showVendors = () => {
   dashboard.buildTheDashboard(boardData.getBoards());
   $('#home').addClass('hide');
+  events.eventListeners();
+};
+
+const showEvents = () => {
+  realEvents.printEvents(eventData.getAllEvents());
+  $('#home').addClass('hide');
+  $('#events').removeClass('hide');
   events.eventListeners();
 };
 
@@ -40,6 +49,7 @@ const makeHomeCard = () => {
  </div>`;
   utilities.printToDom('home', domString);
   $('.eventVendor').click(showVendors);
+  $('.eventHome').click(showEvents);
 };
 
 export default { makeHomeCard };
