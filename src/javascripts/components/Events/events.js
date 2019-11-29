@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import eventData from '../../helpers/data/eventData';
@@ -5,9 +6,26 @@ import utilities from '../../helpers/utilities';
 import './events.scss';
 
 
+const addEvent = (e) => {
+  e.stopImmediatePropagation();
+  const newEvent = {
+    image: $('#add-event-image').val(),
+    name: $('#add-event-name').val(),
+    location: $('#add-event-location').val(),
+    date: $('#add-event-date').val(),
+  };
+  eventData.postEvent(newEvent)
+    .then(() => {
+      $('#add-event-modal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      printEvents();
+    })
+    .catch((err) => console.error('Error adding new event', err));
+};
+
+
 const buildEventCard = (event) => {
   const userSignedIn = firebase.auth().currentUser;
-
   let domString = `
     <div class="col-4">
       <div class="card">
@@ -22,13 +40,11 @@ const buildEventCard = (event) => {
           <button class="btn btn-outline-danger deleteEvent" id="${event.id}">Delete</button>
     `;
   }
-
   domString += `
         </div>
       </div>
     </div>
   `;
-
   return domString;
 };
 
@@ -53,4 +69,4 @@ const printEvents = () => {
 };
 
 
-export default { printEvents };
+export default { printEvents, addEvent };

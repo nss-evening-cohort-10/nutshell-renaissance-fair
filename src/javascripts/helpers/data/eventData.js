@@ -17,5 +17,7 @@ const getAllEvents = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const postEvent = (event) => axios.post(`${baseUrl}/events.json`, event);
 
-export default { getAllEvents };
+
+export default { getAllEvents, postEvent };
