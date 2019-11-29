@@ -6,6 +6,7 @@ import staffs from '../../components/staffBuilder/staffBuilder';
 import souvenirs from '../../components/souvenirs/souvenirs';
 import foods from '../../components/Foods/foods';
 import shows from '../../components/shows/shows';
+import events from '../../components/Events/events';
 
 const authenticate = $('.logInButton');
 const logout = $('.logout');
@@ -18,12 +19,13 @@ const checkLoginStatus = () => {
       authenticate.addClass('hide');
       $('.createButton').removeClass('hide');
     } else {
-      $('#eventHome').removeClass('eventHome');
+      $('.eventHome').removeClass('eventHome');
       $('.eventVendor').removeClass('eventVendor');
       logout.addClass('hide');
       authenticate.removeClass('hide');
       newHomePage.makeHomeCard();
     }
+    events.printEvents();
     staffs.printStaffCards();
     souvenirs.buildSouvenirs();
     foods.buildFoods();
@@ -32,6 +34,7 @@ const checkLoginStatus = () => {
 };
 
 const onload = () => {
+  $('#events').addClass('hide');
   $('#souvenirs').addClass('hide');
   $('#foods').addClass('hide');
   $('#shows').addClass('hide');
