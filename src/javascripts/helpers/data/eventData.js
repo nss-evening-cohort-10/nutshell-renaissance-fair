@@ -17,5 +17,8 @@ const getAllEvents = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const updateEvent = (eventId, updatedEvent) => axios.put(`${baseUrl}/events/${eventId}.json`, updatedEvent);
+const getEventById = (eventId) => axios.get(`${baseUrl}/events/${eventId}.json`);
 
-export default { getAllEvents };
+
+export default { getAllEvents, updateEvent, getEventById };
