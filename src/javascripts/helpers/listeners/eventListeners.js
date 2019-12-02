@@ -6,6 +6,7 @@ import addStaff from '../../components/staffAdd/staffAdd';
 import update from '../../components/souvenirsUpdate/souvenirsUpdate';
 import staffUpdate from '../../components/staffUpdate/staffUpdate';
 import shows from '../../components/shows/shows';
+import events from '../../components/Events/events';
 
 const eventListeners = () => {
   $('#Shows-button').click(() => {
@@ -36,6 +37,9 @@ const eventListeners = () => {
   $('body').on('click', '.deleteShow', shows.deleteShowEvent);
   $('body').on('click', '.editShow', shows.editShowEvent);
   $('body').on('click', '#update-show', shows.updateShowEvent);
+  $('body').on('click', '#add-new-event', events.addEvent);
+  $('body').on('click', '.editEvent', events.openEventsModal);
+  $('body').on('click', '.update-event-button', events.updateAEvent);
   // $('.staffCard').hover(() => {
   //   $('.staff-delete-button').removeClass('hide');
   //   $('.edit-staff-button').removeClass('hide');
