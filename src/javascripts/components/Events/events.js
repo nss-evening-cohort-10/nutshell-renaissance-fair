@@ -1,4 +1,3 @@
-import moment from 'moment';
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -15,7 +14,7 @@ const openEventsModal = (e) => {
       $('#update-event-image').val(event.image);
       $('#update-event-name').val(event.name);
       $('#update-event-location').val(event.location);
-      $('#update-event-date').val(moment(event.date).format('YYYY-MM-DD'));
+      $('#update-event-date').val(event.date);
       $('.update-event-button').attr('id', eventId);
     })
     .catch((error) => console.error(error));
@@ -39,9 +38,36 @@ const updateAEvent = (e) => {
     .catch((error) => console.error(error));
 };
 
+const addEvent = (e) => {
+  e.stopImmediatePropagation();
+  const newEvent = {
+    image: $('#add-event-image').val(),
+    name: $('#add-event-name').val(),
+    location: $('#add-event-location').val(),
+    date: $('#add-event-date').val(),
+  };
+  eventData.postEvent(newEvent)
+    .then(() => {
+      $('#add-event-modal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      printEvents();
+    })
+    .catch((err) => console.error('Error adding new event', err));
+};
+
+const deleteAnEvent = (e) => {
+  e.stopImmediatePropagation();
+  const eventId = e.target.id.split('delete-')[1];
+  eventData.deleteEvent(eventId)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      printEvents();
+    })
+    .catch((error) => console.error(error));
+};
+
 const buildEventCard = (event) => {
   const userSignedIn = firebase.auth().currentUser;
-
   let domString = `
     <div class="col-4">
       <div class="card">
@@ -49,20 +75,18 @@ const buildEventCard = (event) => {
         <div class="card-body">
           <h2 class="card-title">${event.name}</h2>
           <p class="card-text">Location: ${event.location}</p>
-          <p class="card-text">Date: ${moment(event.date).format('ddd, MMMM D, YYYY')}</p>`;
+          <p class="card-text">Date: ${event.date}</p>`;
   if (userSignedIn) {
     domString += `
           <button class="btn btn-outline-warning editEvent" id="${event.id}">Edit</button>
-          <button class="btn btn-outline-danger deleteEvent" id="${event.id}">Delete</button>
+          <button class="btn btn-outline-danger deleteEvent" id="delete-${event.id}">Delete</button>
     `;
   }
-
   domString += `
         </div>
       </div>
     </div>
   `;
-
   return domString;
 };
 
@@ -84,9 +108,10 @@ const printEvents = () => {
       utilities.printToDom('events', domString);
       $('#events').on('click', '.editEvent', openEventsModal);
       $('.update-event-button').click(updateAEvent);
+      $('#events').on('click', '.deleteEvent', deleteAnEvent);
     })
     .catch((err) => console.error('Error getting events', err));
 };
 
 
-export default { printEvents };
+export default { printEvents, addEvent };
