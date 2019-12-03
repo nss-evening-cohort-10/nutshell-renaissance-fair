@@ -16,8 +16,19 @@ const getAllEvents = () => new Promise((resolve, reject) => {
     })
     .catch((err) => reject(err));
 });
-
+const getEventById = (eventId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/events/${eventId}.json`)
+    .then((response) => {
+      resolve(response.data);
+    })
+    .catch((err) => reject(err));
+});
+const updateEvent = (eventId, updatedEvent) => axios.put(`${baseUrl}/events/${eventId}.json`, updatedEvent);
 const postEvent = (event) => axios.post(`${baseUrl}/events.json`, event);
 
-
-export default { getAllEvents, postEvent };
+export default {
+  getAllEvents,
+  updateEvent,
+  getEventById,
+  postEvent,
+};

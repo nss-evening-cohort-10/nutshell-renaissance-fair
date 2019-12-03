@@ -38,6 +38,8 @@ const eventListeners = () => {
   $('body').on('click', '.editShow', shows.editShowEvent);
   $('body').on('click', '#update-show', shows.updateShowEvent);
   $('body').on('click', '#add-new-event', events.addEvent);
+  $('body').on('click', '.editEvent', events.openEventsModal);
+  $('body').on('click', '.update-event-button', events.updateAEvent);
   // $('.staffCard').hover(() => {
   //   $('.staff-delete-button').removeClass('hide');
   //   $('.edit-staff-button').removeClass('hide');
