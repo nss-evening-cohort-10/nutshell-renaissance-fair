@@ -25,6 +25,12 @@ const eventListeners = () => {
     $('#boards').addClass('hide');
     $('#staffs').removeClass('hide');
   });
+
+  $('#events').on('click', '.viewEvent', (e) => {
+    $('#events').addClass('hide');
+    $('#singleEventView').removeClass('hide');
+    events.getSingleEvent(e.target.id);
+  });
   $('#add-new-souvenir').click(addS.addNewSouvenirCard);
   $('body').on('click', '.deleteSouvenir', deleteS.deleteSingleSouvenir);
   $('body').on('click', '.staff-delete-button', staffDelete.deleteStaffMember);

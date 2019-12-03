@@ -5,6 +5,86 @@ import 'firebase/auth';
 import eventData from '../../helpers/data/eventData';
 import utilities from '../../helpers/utilities';
 import './events.scss';
+import smashData from '../../helpers/data/smashData';
+// import { resolve } from 'dns';
+
+const viewSingleEvent = (event) => {
+  let domString = `
+  <div class="container-fluid text-center">
+    <h2>${event.name}</h2>
+    <p>Location</p>
+    <p>Date</p>
+    <button class="closeBtn">Close</button>
+  </div>`;
+  domString += `<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col"><button class="btn btn-danger foodAddBtn">Add</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Cost</td>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Cost</td>
+  </tr>
+
+  <thead>
+  <tr>
+      <th scope="col">Shows</th>
+      <th scope="col"><button class="btn btn-danger showAddBtn">Add</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Cost</td>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Cost</td>
+  </tr>
+
+  <thead> 
+  <tr>
+      <th scope="col">Souvenirs</th>
+      <th scope="col"><button class="btn btn-danger souAddBtn">Add</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Cost</td>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Cost</td>
+  </tr>
+
+  
+  <thead>
+  <tr>
+      <th scope="col">Staff</th>
+      <th scope="col"><button class="btn btn-danger staffAddBtn">Add</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Cost</td>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Cost</td>
+  </tr>
+  </tbody>
+</table>`;
+  utilities.printToDom('singleEventView', domString);
+};
 
 const buildEventCard = (event) => {
   const userSignedIn = firebase.auth().currentUser;
@@ -19,7 +99,8 @@ const buildEventCard = (event) => {
   if (userSignedIn) {
     domString += `
           <button class="btn btn-outline-warning editEvent" id="${event.id}">Edit</button>
-          <button class="btn btn-outline-danger deleteEvent" id="delete-${event.id}">Delete</button>
+          <button class="btn btn-outline-danger deleteEvent" id="${event.id}">Delete</button>
+          <button class=" btn btn-outline-primary viewEvent" id="${event.id}">View</button>
     `;
   }
   domString += `
@@ -49,6 +130,7 @@ const printEvents = () => {
     })
     .catch((err) => console.error('Error getting events', err));
 };
+
 
 const addEvent = (e) => {
   e.stopImmediatePropagation();
@@ -110,10 +192,22 @@ const deleteAnEvent = (e) => {
     .catch((error) => console.error(error));
 };
 
+
+const getSingleEvent = (eventId) => {
+  smashData.completeSingleEvent(eventId)
+    .then((event) => {
+      viewSingleEvent(event);
+      console.log(event);
+    })
+    .catch((error) => console.error(error));
+};
+
 export default {
   printEvents,
   addEvent,
   openEventsModal,
   updateAEvent,
   deleteAnEvent,
+  viewSingleEvent,
+  getSingleEvent,
 };

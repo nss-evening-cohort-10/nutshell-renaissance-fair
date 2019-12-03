@@ -1,34 +1,34 @@
 {
   "souvenirsEvent1": {
-		"souvenirsId": "souvenirs1",
+		"souvenirId": "souvenir1",
     "eventId": "event1"
   },
   "souvenirsEvent2": {
-		"souvenirsId": "souvenirs2",
+		"souvenirId": "souvenir2",
     "eventId": "event2"
   },
   "souvenirsEvent3": {
-		"souvenirsId": "souvenirs3",
+		"souvenirId": "souvenir3",
     "eventId": "event3"
   },
   "souvenirsEvent4": {
-		"souvenirsId": "souvenirs4",
+		"souvenirId": "souvenir4",
     "eventId": "event3"
   },
   "souvenirsEvent5": {
-		"souvenirsId": "souvenirs5",
+		"souvenirId": "souvenir5",
     "eventId": "event4"
   },
   "souvenirsEvent6": {
-		"souvenirsId": "souvenirs6",
+		"souvenirId": "souvenir6",
     "eventId": "event4"
   },
   "souvenirsEvent7": {
-		"souvenirsId": "souvenirs7",
+		"souvenirId": "souvenir7",
     "eventId": "event2"
   },
   "souvenirsEvent8": {
-		"souvenirsId": "souvenirs8",
+		"souvenirId": "souvenir8",
     "eventId": "event1"
   }
 }
