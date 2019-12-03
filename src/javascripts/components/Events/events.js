@@ -5,6 +5,7 @@ import 'firebase/auth';
 import eventData from '../../helpers/data/eventData';
 import utilities from '../../helpers/utilities';
 import './events.scss';
+import smashData from '../../helpers/data/smashData';
 // import { resolve } from 'dns';
 
 const viewSingleEvent = (event) => {
@@ -193,9 +194,7 @@ const deleteAnEvent = (e) => {
 
 
 const getSingleEvent = (eventId) => {
-  eventData.getEventById(eventId)
-  // call data file and pass in eventId
-  //  in the then viewSingleEvent and pass in event
+  smashData.completeSingleEvent(eventId)
     .then((event) => {
       // viewSingleEvent(event);
       console.log(event);
