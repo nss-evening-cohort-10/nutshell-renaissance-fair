@@ -196,7 +196,7 @@ const deleteAnEvent = (e) => {
 const getSingleEvent = (eventId) => {
   smashData.completeSingleEvent(eventId)
     .then((event) => {
-      // viewSingleEvent(event);
+      viewSingleEvent(event);
       console.log(event);
     })
     .catch((error) => console.error(error));
