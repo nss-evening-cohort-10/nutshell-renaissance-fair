@@ -6,6 +6,13 @@ import eventData from '../../helpers/data/eventData';
 import utilities from '../../helpers/utilities';
 import './events.scss';
 
+const viewSingleEvent = () => {
+  let domString = '<div id="viewEventSection" class="container-fluid"><button class="closeBtn">Close</button>';
+  domString += '<h1>Hello</h1>';
+
+  utilities.printToDom('singleEventView', domString);
+};
+
 const buildEventCard = (event) => {
   const userSignedIn = firebase.auth().currentUser;
   let domString = `
@@ -20,6 +27,7 @@ const buildEventCard = (event) => {
     domString += `
           <button class="btn btn-outline-warning editEvent" id="${event.id}">Edit</button>
           <button class="btn btn-outline-danger deleteEvent" id="${event.id}">Delete</button>
+          <button class=" btn btn-outline-primary viewEvent" id="${event.id}">View</button>
     `;
   }
   domString += `
@@ -46,9 +54,11 @@ const printEvents = () => {
 
       domString += '</div></div>';
       utilities.printToDom('events', domString);
+      $('#events').on('click', '.viewEvent', viewSingleEvent);
     })
     .catch((err) => console.error('Error getting events', err));
 };
+
 
 const addEvent = (e) => {
   e.stopImmediatePropagation();
