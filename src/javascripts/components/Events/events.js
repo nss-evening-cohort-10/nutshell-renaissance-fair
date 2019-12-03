@@ -5,11 +5,83 @@ import 'firebase/auth';
 import eventData from '../../helpers/data/eventData';
 import utilities from '../../helpers/utilities';
 import './events.scss';
+// import { resolve } from 'dns';
 
-const viewSingleEvent = () => {
-  let domString = '<div id="viewEventSection" class="container-fluid"><button class="closeBtn">Close</button>';
-  domString += '<h1>Hello</h1>';
+const viewSingleEvent = (event) => {
+  let domString = `
+  <div class="container-fluid text-center">
+    <h2>${event.name}</h2>
+    <p>Location</p>
+    <p>Date</p>
+    <button class="closeBtn">Close</button>
+  </div>`;
+  domString += `<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col"><button class="btn btn-danger foodAddBtn">Add</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Cost</td>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Cost</td>
+  </tr>
 
+  <thead>
+  <tr>
+      <th scope="col">Shows</th>
+      <th scope="col"><button class="btn btn-danger showAddBtn">Add</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Cost</td>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Cost</td>
+  </tr>
+
+  <thead> 
+  <tr>
+      <th scope="col">Souvenirs</th>
+      <th scope="col"><button class="btn btn-danger souAddBtn">Add</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Cost</td>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Cost</td>
+  </tr>
+
+  
+  <thead>
+  <tr>
+      <th scope="col">Staff</th>
+      <th scope="col"><button class="btn btn-danger staffAddBtn">Add</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Cost</td>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Cost</td>
+  </tr>
+  </tbody>
+</table>`;
   utilities.printToDom('singleEventView', domString);
 };
 
@@ -54,7 +126,6 @@ const printEvents = () => {
 
       domString += '</div></div>';
       utilities.printToDom('events', domString);
-      $('#events').on('click', '.viewEvent', viewSingleEvent);
     })
     .catch((err) => console.error('Error getting events', err));
 };
@@ -120,10 +191,24 @@ const deleteAnEvent = (e) => {
     .catch((error) => console.error(error));
 };
 
+
+const getSingleEvent = (eventId) => {
+  eventData.getEventById(eventId)
+  // call data file and pass in eventId
+  //  in the then viewSingleEvent and pass in event
+    .then((event) => {
+      // viewSingleEvent(event);
+      console.log(event);
+    })
+    .catch((error) => console.error(error));
+};
+
 export default {
   printEvents,
   addEvent,
   openEventsModal,
   updateAEvent,
   deleteAnEvent,
+  viewSingleEvent,
+  getSingleEvent,
 };

@@ -39,6 +39,7 @@ const onload = () => {
   $('#foods').addClass('hide');
   $('#shows').addClass('hide');
   $('#staffs').addClass('hide');
+  $('singleEventView').addClass('hide');
 };
 
 window.onload = onload;
