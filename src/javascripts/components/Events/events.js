@@ -19,7 +19,7 @@ const buildEventCard = (event) => {
   if (userSignedIn) {
     domString += `
           <button class="btn btn-outline-warning editEvent" id="${event.id}">Edit</button>
-          <button class="btn btn-outline-danger deleteEvent" id="${event.id}">Delete</button>
+          <button class="btn btn-outline-danger deleteEvent" id="delete-${event.id}">Delete</button>
     `;
   }
   domString += `
@@ -99,9 +99,21 @@ const updateAEvent = (e) => {
     .catch((error) => console.error(error));
 };
 
+const deleteAnEvent = (e) => {
+  e.stopImmediatePropagation();
+  const eventId = e.target.id.split('delete-')[1];
+  eventData.deleteEvent(eventId)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      printEvents();
+    })
+    .catch((error) => console.error(error));
+};
+
 export default {
   printEvents,
   addEvent,
   openEventsModal,
   updateAEvent,
+  deleteAnEvent,
 };
