@@ -9,17 +9,17 @@ import './events.scss';
 const buildEventCard = (event) => {
   const userSignedIn = firebase.auth().currentUser;
   let domString = `
-    <div class=“col-4”>
-      <div class=“card”>
-        <img class=“card-img-top” src=“${event.image}” />
-        <div class=“card-body”>
-          <h2 class=“card-title”>${event.name}</h2>
-          <p class=“card-text”>Location: ${event.location}</p>
+    <div class="col-4">
+      <div class="card">
+        <img class="card-img-top" src="${event.image}" />
+        <div class="card-body">
+          <h2 class="card-title">${event.name}</h2>
+          <p class="card-text">Location: ${event.location}</p>
           <p class="card-text">Date: ${moment(event.date).format('ddd, MMMM D, YYYY')}</p>`;
   if (userSignedIn) {
     domString += `
-          <button class=“btn btn-outline-warning editEvent” id=“${event.id}“>Edit</button>
-          <button class=“btn btn-outline-danger deleteEvent” id=“${event.id}“>Delete</button>
+          <button class="btn btn-outline-warning editEvent" id="${event.id}">Edit</button>
+          <button class="btn btn-outline-danger deleteEvent" id="delete-${event.id}">Delete</button>
     `;
   }
   domString += `
