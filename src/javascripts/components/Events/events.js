@@ -1,3 +1,4 @@
+import moment from 'moment';
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -5,81 +6,20 @@ import eventData from '../../helpers/data/eventData';
 import utilities from '../../helpers/utilities';
 import './events.scss';
 
-const openEventsModal = (e) => {
-  const eventId = e.target.id.split('update-')[1];
-  eventData.getEventById(eventId)
-    .then((response) => {
-      $('#update-event-modal').modal('show');
-      const event = response.data;
-      $('#update-event-image').val(event.image);
-      $('#update-event-name').val(event.name);
-      $('#update-event-location').val(event.location);
-      $('#update-event-date').val(event.date);
-      $('.update-event-button').attr('id', eventId);
-    })
-    .catch((error) => console.error(error));
-};
-
-const updateAEvent = (e) => {
-  e.stopImmediatePropagation();
-  const eventId = e.target.id;
-  const updatedEvent = {
-    image: $('#update-event-image').val(),
-    name: $('#update-event-name').val(),
-    location: $('#update-event-location').val(),
-    date: $('#update-event-date').val(),
-  };
-  eventData.updateEvent(eventId, updatedEvent)
-    .then(() => {
-      $('#update-event-modal').modal('hide');
-      // eslint-disable-next-line no-use-before-define
-      printEvents();
-    })
-    .catch((error) => console.error(error));
-};
-
-const addEvent = (e) => {
-  e.stopImmediatePropagation();
-  const newEvent = {
-    image: $('#add-event-image').val(),
-    name: $('#add-event-name').val(),
-    location: $('#add-event-location').val(),
-    date: $('#add-event-date').val(),
-  };
-  eventData.postEvent(newEvent)
-    .then(() => {
-      $('#add-event-modal').modal('hide');
-      // eslint-disable-next-line no-use-before-define
-      printEvents();
-    })
-    .catch((err) => console.error('Error adding new event', err));
-};
-
-const deleteAnEvent = (e) => {
-  e.stopImmediatePropagation();
-  const eventId = e.target.id.split('delete-')[1];
-  eventData.deleteEvent(eventId)
-    .then(() => {
-      // eslint-disable-next-line no-use-before-define
-      printEvents();
-    })
-    .catch((error) => console.error(error));
-};
-
 const buildEventCard = (event) => {
   const userSignedIn = firebase.auth().currentUser;
   let domString = `
-    <div class="col-4">
-      <div class="card">
-        <img class="card-img-top" src="${event.image}" />
-        <div class="card-body">
-          <h2 class="card-title">${event.name}</h2>
-          <p class="card-text">Location: ${event.location}</p>
-          <p class="card-text">Date: ${event.date}</p>`;
+    <div class=“col-4”>
+      <div class=“card”>
+        <img class=“card-img-top” src=“${event.image}” />
+        <div class=“card-body”>
+          <h2 class=“card-title”>${event.name}</h2>
+          <p class=“card-text”>Location: ${event.location}</p>
+          <p class="card-text">Date: ${moment(event.date).format('ddd, MMMM D, YYYY')}</p>`;
   if (userSignedIn) {
     domString += `
-          <button class="btn btn-outline-warning editEvent" id="${event.id}">Edit</button>
-          <button class="btn btn-outline-danger deleteEvent" id="delete-${event.id}">Delete</button>
+          <button class=“btn btn-outline-warning editEvent” id=“${event.id}“>Edit</button>
+          <button class=“btn btn-outline-danger deleteEvent” id=“${event.id}“>Delete</button>
     `;
   }
   domString += `
@@ -106,12 +46,74 @@ const printEvents = () => {
 
       domString += '</div></div>';
       utilities.printToDom('events', domString);
-      $('#events').on('click', '.editEvent', openEventsModal);
-      $('.update-event-button').click(updateAEvent);
-      $('#events').on('click', '.deleteEvent', deleteAnEvent);
     })
     .catch((err) => console.error('Error getting events', err));
 };
 
+const addEvent = (e) => {
+  e.stopImmediatePropagation();
+  const newEvent = {
+    image: $('#add-event-image').val(),
+    name: $('#add-event-name').val(),
+    location: $('#add-event-location').val(),
+    date: $('#add-event-date').val(),
+  };
+  eventData.postEvent(newEvent)
+    .then(() => {
+      $('#add-event-modal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      printEvents();
+    })
+    .catch((err) => console.error('Error adding new event', err));
+};
 
-export default { printEvents, addEvent };
+const openEventsModal = (e) => {
+  const eventId = e.target.id;
+  $('#update-event-modal').modal('show');
+  eventData.getEventById(eventId)
+    .then((event) => {
+      $('#update-event-image').val(event.image);
+      $('#update-event-name').val(event.name);
+      $('#update-event-location').val(event.location);
+      $('#update-event-date').val(event.date);
+      $('#update-event-modal').find('.event-modal-footer').attr('id', eventId);
+    })
+    .catch((error) => console.error(error));
+};
+
+const updateAEvent = (e) => {
+  const eventToUpdate = e.target.parentNode.id;
+
+  const updatedEvent = {
+    image: $('#update-event-image').val(),
+    name: $('#update-event-name').val(),
+    location: $('#update-event-location').val(),
+    date: $('#update-event-date').val(),
+  };
+
+  eventData.updateEvent(eventToUpdate, updatedEvent)
+    .then(() => {
+      $('#update-event-modal').modal('hide');
+      printEvents();
+    })
+    .catch((error) => console.error(error));
+};
+
+const deleteAnEvent = (e) => {
+  e.stopImmediatePropagation();
+  const eventId = e.target.id.split('delete-')[1];
+  eventData.deleteEvent(eventId)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      printEvents();
+    })
+    .catch((error) => console.error(error));
+};
+
+export default {
+  printEvents,
+  addEvent,
+  openEventsModal,
+  updateAEvent,
+  deleteAnEvent,
+};
