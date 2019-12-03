@@ -109,9 +109,21 @@ const updateAEvent = (e) => {
     .catch((error) => console.error(error));
 };
 
+const deleteAnEvent = (e) => {
+  e.stopImmediatePropagation();
+  const eventId = e.target.id.split('delete-')[1];
+  eventData.deleteEvent(eventId)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      printEvents();
+    })
+    .catch((error) => console.error(error));
+};
+
 export default {
   printEvents,
   addEvent,
   openEventsModal,
   updateAEvent,
+  deleteAnEvent,
 };
