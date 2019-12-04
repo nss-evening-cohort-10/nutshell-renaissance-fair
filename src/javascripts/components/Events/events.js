@@ -7,6 +7,7 @@ import utilities from '../../helpers/utilities';
 import './events.scss';
 import smashData from '../../helpers/data/smashData';
 import eventFood from '../eventFood/eventfood';
+import eventShow from '../eventShow/eventShow';
 import singleEventSouvenir from '../SingleEventSouvenir/singleEventSouvenir';
 
 const close = () => {
@@ -31,6 +32,7 @@ const viewSingleEvent = (event) => {
     <div id="closeEvent"><button class="closeBtn">Close</button></div>
   </div>`;
   domString += eventFood.foodEventBuilder(event);
+  domString += eventShow.showEventBuilder(event);
   domString += singleEventSouvenir.souvenirEventBuilder(event);
 
   utilities.printToDom('singleEventView', domString);
