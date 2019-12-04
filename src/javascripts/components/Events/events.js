@@ -27,10 +27,11 @@ const viewSingleEvent = (event) => {
     <p class="textColor">Date: ${event.date}</p>
     <div id= "closeEvent"><button class="closeBtn">Close</button>
   </div>`;
-  domString += `<table class="table table-striped">
-  <thead>
+  domString += `
+  <table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
-      <th scope="col">Food</th>
+      <th scope="col">FOOD</th>
       <th scope="col"><button class="btn btn-danger foodAddBtn">Add</button></th>
     </tr>
   </thead>
@@ -43,11 +44,15 @@ const viewSingleEvent = (event) => {
     <td>Name</td>
     <td>Cost</td>
   </tr>
+  </tbody>
+</table>
 
-  <thead>
-  <tr>
-      <th scope="col">Shows</th>
-      <th scope="col"><button class="btn btn-danger showAddBtn">Add</button></th>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">SHOWS</th>
+      <th scope="col"><button class="btn btn-danger showsAddBtn">Add</button></th>
     </tr>
   </thead>
   <tbody>
@@ -59,11 +64,15 @@ const viewSingleEvent = (event) => {
     <td>Name</td>
     <td>Cost</td>
   </tr>
+  </tbody>
+</table>
 
-  <thead> 
-  <tr>
-      <th scope="col">Souvenirs</th>
-      <th scope="col"><button class="btn btn-danger souAddBtn">Add</button></th>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">SOUVENIRS</th>
+      <th scope="col"><button class="btn btn-danger souvenirsAddBtn">Add</button></th>
     </tr>
   </thead>
   <tbody>
@@ -75,11 +84,14 @@ const viewSingleEvent = (event) => {
     <td>Name</td>
     <td>Cost</td>
   </tr>
+  </tbody>
+</table>
 
-  
-  <thead>
-  <tr>
-      <th scope="col">Staff</th>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">STAFF</th>
       <th scope="col"><button class="btn btn-danger staffAddBtn">Add</button></th>
     </tr>
   </thead>
@@ -93,7 +105,8 @@ const viewSingleEvent = (event) => {
     <td>Cost</td>
   </tr>
   </tbody>
-</table>`;
+</table>
+`;
   utilities.printToDom('singleEventView', domString);
   $('#closeEvent').on('click', '.closeBtn', close);
 };
