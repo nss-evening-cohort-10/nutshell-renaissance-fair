@@ -22,17 +22,19 @@ const close = () => {
 };
 
 const viewSingleEvent = (event) => {
+  const domString2 = '';
   let domString = `
   <div class="container-fluid text-center">
     <h2 class="textColor">${event.name}</h2>
     <p class="textColor">Location: ${event.location}</p>
     <p class="textColor">Date: ${event.date}</p>
-    <div id="closeEvent"><button class="closeBtn">Close</button>
+    <div id="closeEvent"><button class="closeBtn">Close</button></div>
   </div>`;
   domString += eventFood.foodEventBuilder(event);
   domString += singleEventSouvenir.souvenirEventBuilder(event);
 
   utilities.printToDom('singleEventView', domString);
+  utilities.printToDom('foodTotal', domString2);
   $('#closeEvent').on('click', '.closeBtn', close);
 };
 

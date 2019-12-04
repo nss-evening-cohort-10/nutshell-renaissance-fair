@@ -5,7 +5,7 @@
   },
   "foodEvent2": {
 		"foodId": "food2",
-    "eventId": "event2"
+    "eventId": "event1"
   },
   "foodEvent3": {
 		"foodId": "food3",
