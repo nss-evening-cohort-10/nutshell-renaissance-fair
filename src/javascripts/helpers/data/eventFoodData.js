@@ -17,4 +17,18 @@ const getEventFoodByEventId = (eventId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getEventFoodByEventId };
+const getEventFoods = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/eventFood.json`)
+    .then((response) => {
+      const eventFood = response.data;
+      const food = [];
+      Object.keys(eventFood).forEach((fbId) => {
+        eventFood[fbId].id = fbId;
+        food.push(eventFood[fbId]);
+      });
+      resolve(food);
+    })
+    .catch((err) => reject(err));
+});
+
+export default { getEventFoodByEventId, getEventFoods };

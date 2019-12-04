@@ -1,17 +1,33 @@
 import $ from 'jquery';
 import utilities from '../../helpers/utilities';
+import foodData from '../../helpers/data/foodsData';
 import './eventfood.scss';
+// import smashData from '../../helpers/data/smashData';
+
+const addFood = () => {
+  $('#uniModal').modal('hide');
+};
 
 const addEventFoodModal = () => {
+  // const eventId = e.target.id.split('addFood-')[1];
   const title = 'Add Food';
-  const body = `<form>
-    <div class="form-group">
-      <input type="checkbox" name="food1" checked data-toggle="toggle">
-      <label for="food1">Food 1</label>
-    </div>
-    <button type="button" class="btn btn-danger btn-block save-board" id="add-food">SAVE</button>
+  let body = '<form>';
+  foodData.getFoods()
+  // smashData.allFoodsEvents()
+    .then((foods) => {
+      foods.forEach((x) => {
+        body += `
+      <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="${x.id}" id="${x.id}" ${x.isSelected === true ? 'checked' : ''}>
+      <label class="form-check-label" for="${x.id}">
+        ${x.name}
+      </label></div><p></p>`;
+      });
+      body += `<button type="button" class="btn btn-danger btn-block save-board" id="add-food-event">SAVE</button>
     </form>`;
-  utilities.printModal(title, body);
+      utilities.printModal(title, body);
+    })
+    .catch((err) => console.error('Error getting events', err));
   $('#uniModal').modal('show');
   // $('#add-undefined').click('.save-board', addBoard);
   // $(`#update-${id}`).click('.save-board', updateBoard);
@@ -25,7 +41,7 @@ const foodEventBuilder = (event) => {
   <thead class="thead-dark">
     <tr>
       <th scope="col">FOOD</th>
-      <th class="text-right" scope="col"><button class="btn btn-danger foodAddBtn">Add</button></th>
+      <th class="text-right" scope="col"><button class="btn btn-danger foodAddBtn" id="addFood-${event.id}">Add</button></th>
     </tr>
   </thead>
   <tbody>
@@ -49,4 +65,4 @@ const foodEventBuilder = (event) => {
   return domString;
 };
 
-export default { foodEventBuilder, addEventFoodModal };
+export default { foodEventBuilder, addEventFoodModal, addFood };

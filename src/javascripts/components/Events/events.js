@@ -53,7 +53,7 @@ const buildEventCard = (event) => {
   if (userSignedIn) {
     domString += `
           <button class="btn btn-outline-warning editEvent" id="${event.id}">Edit</button>
-          <button class="btn btn-outline-danger deleteEvent" id="${event.id}">Delete</button>
+          <button class="btn btn-outline-danger deleteEvent" id="delete-${event.id}">Delete</button>
           <button class=" btn btn-outline-primary viewEvent" id="${event.id}">View</button>
     `;
   }

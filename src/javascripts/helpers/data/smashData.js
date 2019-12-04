@@ -40,6 +40,29 @@ const foodForEvent = (eventId) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+// const allFoodsEvents = () => new Promise((resolve, reject) => {
+//   eventFoodData.getEventFoods()
+//     .then((eventFood) => {
+//       foodsData.getFoods().then((foods) => {
+//         const allFoods = [];
+//         let isSelected = false;
+//         eventFood.forEach((x) => {
+//           console.log(x.foodId, foods.id);
+//           if (x.foodId === foods.id) {
+//             isSelected = true;
+//           } else {
+//             isSelected = false;
+//           }
+//           allFoods.event = eventFood;
+//           allFoods.food = foods;
+//           allFoods.event.push(isSelected);
+//         });
+//         resolve(allFoods);
+//       });
+//     })
+//     .catch((error) => reject(error));
+// });
+
 const showForEvent = (eventId) => new Promise((resolve, reject) => {
   eventShowData.getEventShowByEventId(eventId)
     .then((eventShow) => {
