@@ -7,6 +7,8 @@ import update from '../../components/souvenirsUpdate/souvenirsUpdate';
 import staffUpdate from '../../components/staffUpdate/staffUpdate';
 import shows from '../../components/shows/shows';
 import events from '../../components/Events/events';
+import eventShow from '../../components/eventShow/eventShow';
+
 
 const eventListeners = () => {
   $('#Shows-button').click(() => {
@@ -39,6 +41,7 @@ const eventListeners = () => {
   $('body').on('click', '.update-souvenir-button', update.updateSouvenirItem);
   $('body').on('click', '.staff-edit', staffUpdate.getPreFilledStaffModal);
   $('body').on('click', '.update-staff-button', staffUpdate.updateStaffMember);
+  $('body').on('click', '.add-new-event-show', eventShow.addEventShow);
   $('body').on('click', '#add-new-show', shows.addShowEvent);
   $('body').on('click', '.deleteShow', shows.deleteShowEvent);
   $('body').on('click', '.editShow', shows.editShowEvent);

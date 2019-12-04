@@ -1,21 +1,7 @@
 import './eventShow.scss';
 
-// import eventShowData from '../../helpers/data/eventShowData';
+import eventShowData from '../../helpers/data/eventShowData';
 
-// const addEventShow = (e) => {
-//   e.stopImmediatePropagation();
-//   const newEventShow = {
-//     name: $('#show-name').val(),
-//     cost: $('#show-cost').val(),
-//   };
-//   eventShowData.postEventShow(newEventShow)
-//     .then(() => {
-//       $('#add-show-modal').modal('hide');
-//       // eslint-disable-next-line no-use-before-define
-//       showEventBuilder();
-//     })
-//     .catch((err) => console.error('Error adding new event show', err));
-// };
 
 const showEventBuilder = (event) => {
   const { shows } = event;
@@ -25,7 +11,7 @@ const showEventBuilder = (event) => {
   <thead class="thead-dark">
     <tr>
       <th scope="col">SHOW</th>
-      <th class="text-right" scope="col"><button class="btn btn-danger showAddBtn">Add</button></th>
+      <th class="text-right" scope="col"><button class="btn btn-danger" data-target="#add-event-show-modal">Add</button></th>
     </tr>
   </thead>
   <tbody>
@@ -49,4 +35,19 @@ const showEventBuilder = (event) => {
   return domString;
 };
 
-export default { showEventBuilder };
+const addEventShow = (e) => {
+  e.stopImmediatePropagation();
+  const newEventShow = {
+    name: $('#event-show-name').val(),
+    cost: $('#event-show-cost').val() * 1,
+  };
+  eventShowData.postEventShow(newEventShow)
+    .then(() => {
+      $('#add-event-show-modal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      showEventBuilder();
+    })
+    .catch((err) => console.error('Error adding new event show', err));
+};
+
+export default { showEventBuilder, addEventShow };
