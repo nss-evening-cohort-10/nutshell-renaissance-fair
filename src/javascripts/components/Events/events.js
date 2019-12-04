@@ -6,15 +6,26 @@ import eventData from '../../helpers/data/eventData';
 import utilities from '../../helpers/utilities';
 import './events.scss';
 import smashData from '../../helpers/data/smashData';
-// import { resolve } from 'dns';
+
+const close = () => {
+  $(document).click((e) => {
+    const buttonName = e.target.className;
+    // console.log(e.target.className);
+    if (buttonName === 'closeBtn') {
+      // eslint-disable-next-line no-use-before-define
+      $('#events').removeClass('hide');
+      $('#singleEventView').addClass('hide');
+    }
+  });
+};
 
 const viewSingleEvent = (event) => {
   let domString = `
   <div class="container-fluid text-center">
-    <h2>${event.name}</h2>
-    <p>Location</p>
-    <p>Date</p>
-    <button class="closeBtn">Close</button>
+    <h2 class="textColor">${event.name}</h2>
+    <p class="textColor">Location: ${event.location}</p>
+    <p class="textColor">Date: ${event.date}</p>
+    <div id= "closeEvent"><button class="closeBtn">Close</button>
   </div>`;
   domString += `<table class="table table-striped">
   <thead>
@@ -84,6 +95,7 @@ const viewSingleEvent = (event) => {
   </tbody>
 </table>`;
   utilities.printToDom('singleEventView', domString);
+  $('#closeEvent').on('click', '.closeBtn', close);
 };
 
 const buildEventCard = (event) => {
