@@ -7,6 +7,9 @@ import utilities from '../../helpers/utilities';
 import './events.scss';
 import smashData from '../../helpers/data/smashData';
 import eventFood from '../eventFood/eventfood';
+import eventStaff from '../eventStaff/eventStaff';
+import eventShow from '../eventShow/eventShow';
+import singleEventSouvenir from '../SingleEventSouvenir/singleEventSouvenir';
 
 const close = () => {
   $(document).click((e) => {
@@ -29,6 +32,9 @@ const viewSingleEvent = (event) => {
     <div id="closeEvent"><button class="closeBtn">Close</button></div>
   </div>`;
   domString += eventFood.foodEventBuilder(event);
+  domString += eventStaff.staffEventBuilder(event);
+  domString += eventShow.showEventBuilder(event);
+  domString += singleEventSouvenir.souvenirEventBuilder(event);
 
   utilities.printToDom('singleEventView', domString);
   $('#closeEvent').on('click', '.closeBtn', close);
@@ -145,7 +151,6 @@ const getSingleEvent = (eventId) => {
   smashData.completeSingleEvent(eventId)
     .then((event) => {
       viewSingleEvent(event);
-      console.log(event);
     })
     .catch((error) => console.error(error));
 };
