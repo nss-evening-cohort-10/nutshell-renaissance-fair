@@ -6,6 +6,7 @@ import eventData from '../../helpers/data/eventData';
 import utilities from '../../helpers/utilities';
 import './events.scss';
 import smashData from '../../helpers/data/smashData';
+import eventFood from '../eventFood/eventfood';
 
 const close = () => {
   $(document).click((e) => {
@@ -25,88 +26,10 @@ const viewSingleEvent = (event) => {
     <h2 class="textColor">${event.name}</h2>
     <p class="textColor">Location: ${event.location}</p>
     <p class="textColor">Date: ${event.date}</p>
-    <div id= "closeEvent"><button class="closeBtn">Close</button>
+    <div id="closeEvent"><button class="closeBtn">Close</button>
   </div>`;
-  domString += `
-  <table class="table table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">FOOD</th>
-      <th scope="col"><button class="btn btn-danger foodAddBtn">Add</button></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Name</td>
-      <td>Cost</td>
-    </tr>
-    <tr>
-    <td>Name</td>
-    <td>Cost</td>
-  </tr>
-  </tbody>
-</table>
+  domString += eventFood.foodEventBuilder(event);
 
-
-<table class="table table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">SHOWS</th>
-      <th scope="col"><button class="btn btn-danger showsAddBtn">Add</button></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Name</td>
-      <td>Cost</td>
-    </tr>
-    <tr>
-    <td>Name</td>
-    <td>Cost</td>
-  </tr>
-  </tbody>
-</table>
-
-
-<table class="table table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">SOUVENIRS</th>
-      <th scope="col"><button class="btn btn-danger souvenirsAddBtn">Add</button></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Name</td>
-      <td>Cost</td>
-    </tr>
-    <tr>
-    <td>Name</td>
-    <td>Cost</td>
-  </tr>
-  </tbody>
-</table>
-
-
-<table class="table table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">STAFF</th>
-      <th scope="col"><button class="btn btn-danger staffAddBtn">Add</button></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Name</td>
-      <td>Cost</td>
-    </tr>
-    <tr>
-    <td>Name</td>
-    <td>Cost</td>
-  </tr>
-  </tbody>
-</table>
-`;
   utilities.printToDom('singleEventView', domString);
   $('#closeEvent').on('click', '.closeBtn', close);
 };
