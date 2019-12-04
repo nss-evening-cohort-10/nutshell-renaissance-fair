@@ -7,6 +7,7 @@ import utilities from '../../helpers/utilities';
 import './events.scss';
 import smashData from '../../helpers/data/smashData';
 import eventFood from '../eventFood/eventfood';
+import eventShow from '../eventShow/eventShow';
 
 const close = () => {
   $(document).click((e) => {
@@ -30,6 +31,7 @@ const viewSingleEvent = (event) => {
     <div id="closeEvent"><button class="closeBtn">Close</button></div>
   </div>`;
   domString += eventFood.foodEventBuilder(event);
+  domString += eventShow.showEventBuilder(event);
 
   utilities.printToDom('singleEventView', domString);
   utilities.printToDom('foodTotal', domString2);
