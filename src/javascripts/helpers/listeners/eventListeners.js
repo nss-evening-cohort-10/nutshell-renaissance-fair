@@ -7,6 +7,7 @@ import update from '../../components/souvenirsUpdate/souvenirsUpdate';
 import staffUpdate from '../../components/staffUpdate/staffUpdate';
 import shows from '../../components/shows/shows';
 import events from '../../components/Events/events';
+import eventFood from '../../components/eventFood/eventfood';
 
 const eventListeners = () => {
   $('#Shows-button').click(() => {
@@ -47,6 +48,7 @@ const eventListeners = () => {
   $('body').on('click', '.editEvent', events.openEventsModal);
   $('body').on('click', '.update-event-button', events.updateAEvent);
   $('body').on('click', '.deleteEvent', events.deleteAnEvent);
+  $('#body').click('.fooAddBtn', eventFood.addEventFoodModal);
   // $('.staffCard').hover(() => {
   //   $('.staff-delete-button').removeClass('hide');
   //   $('.edit-staff-button').removeClass('hide');

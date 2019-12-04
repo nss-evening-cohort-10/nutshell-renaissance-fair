@@ -21,7 +21,6 @@ const close = () => {
 };
 
 const viewSingleEvent = (event) => {
-  const domString2 = '';
   let domString = `
   <div class="container-fluid text-center">
     <h2 class="textColor">${event.name}</h2>
@@ -32,7 +31,6 @@ const viewSingleEvent = (event) => {
   domString += eventFood.foodEventBuilder(event);
 
   utilities.printToDom('singleEventView', domString);
-  utilities.printToDom('foodTotal', domString2);
   $('#closeEvent').on('click', '.closeBtn', close);
 };
 

@@ -1,4 +1,21 @@
+import $ from 'jquery';
+import utilities from '../../helpers/utilities';
 import './eventfood.scss';
+
+const addEventFoodModal = () => {
+  const title = 'Add Food';
+  const body = `<form>
+    <div class="form-group">
+      <label for="boardName">Board Name</label>
+      <input type="text" class="form-control" id="boardName" placeholder="Enter Food Name">
+    </div>
+    <button type="button" class="btn btn-danger btn-block save-board" id="add-food">SAVE</button>
+    </form>`;
+  utilities.printModal(title, body);
+  $('#uniModal').modal('show');
+  // $('#add-undefined').click('.save-board', addBoard);
+  // $(`#update-${id}`).click('.save-board', updateBoard);
+};
 
 const foodEventBuilder = (event) => {
   const { foods } = event;
@@ -25,11 +42,11 @@ const foodEventBuilder = (event) => {
   });
   domString += `</tr>
   <tr class="table-primary">
-    <td>TOATAL</td>
+    <td>TOTAL</td>
     <td class="text-right">$${(total).toFixed(2)}</td>
     </tbody>
   </table></div>`;
   return domString;
 };
 
-export default { foodEventBuilder };
+export default { foodEventBuilder, addEventFoodModal };
