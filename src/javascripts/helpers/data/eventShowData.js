@@ -17,4 +17,6 @@ const getEventShowByEventId = (eventId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getEventShowByEventId };
+const postEventShow = (eventShow) => axios.post(`${baseUrl}/eventShows.json`, eventShow);
+
+export default { getEventShowByEventId, postEventShow };
