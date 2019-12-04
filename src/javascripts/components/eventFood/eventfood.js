@@ -6,8 +6,8 @@ const addEventFoodModal = () => {
   const title = 'Add Food';
   const body = `<form>
     <div class="form-group">
-      <label for="boardName">Board Name</label>
-      <input type="text" class="form-control" id="boardName" placeholder="Enter Food Name">
+      <input type="checkbox" name="food1" checked data-toggle="toggle">
+      <label for="food1">Food 1</label>
     </div>
     <button type="button" class="btn btn-danger btn-block save-board" id="add-food">SAVE</button>
     </form>`;
